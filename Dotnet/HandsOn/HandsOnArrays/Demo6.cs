@@ -25,6 +25,7 @@ namespace HandsOnArrays
                                 Console.WriteLine("Even No");
                             else
                                 Console.WriteLine("Odd No");
+                           // Console.WriteLine(no % 2 == 0 ? "Even" : "Odd");
                         }
                         break;
                     case 2:
