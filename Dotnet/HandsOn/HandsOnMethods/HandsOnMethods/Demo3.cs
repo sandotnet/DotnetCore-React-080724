@@ -11,7 +11,7 @@ namespace HandsOnMethods
         public static int Sqaure(int no)
         {
             int result = no * no;
-            return result;
+           return result;
 
         }
         public bool IsEven(int no)
@@ -29,6 +29,7 @@ namespace HandsOnMethods
         }
         static void Main()
         {
+            
             int result=Sqaure(12);
             Console.WriteLine(result);
             result = Demo3.Sqaure(23);

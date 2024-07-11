@@ -5,14 +5,21 @@ namespace HandsOnConstructors
     class Circle
     {
         public double r;
-        public static double PI=3.14;
+        public static double PI;
       
         public Circle() //default constructor
         {
+            Console.WriteLine("Object Initiated");
             r = 10.3;
+        }
+        static Circle() //static constructor
+        {
+            Console.WriteLine("I am Static Constructor Invoking only once..");
+            PI = 3.14;
         }
         public Circle(double radius) //parameterized constructor
         {
+            Console.WriteLine("Object Initiated");
             r = radius;
         }
         public void Area()

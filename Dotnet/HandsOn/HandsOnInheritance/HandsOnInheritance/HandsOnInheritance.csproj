@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <StartupObject>HandsOnInheritance.Demo4</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Demo6.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Demo6.cs" />
+  </ItemGroup>
+
+</Project>

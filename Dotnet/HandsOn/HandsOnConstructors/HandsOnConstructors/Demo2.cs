@@ -8,7 +8,7 @@ namespace HandsOnConstructors
 {
     class Rectangle
     {
-        private int l, w;
+        public int l, w;
         public Rectangle()
         {
             l = 10;
@@ -36,11 +36,15 @@ namespace HandsOnConstructors
             Rectangle r = new Rectangle();
             Rectangle r1 = new Rectangle(12, 23);
             Rectangle r2 = new Rectangle(34, 45);
-            Rectangle r3 = new Rectangle(r1); //r1 values are copy to r3
+            Rectangle r3 = new Rectangle(r1); //r1 values are copy to r3 //deep copy
+            r1.l = 10;
+            Rectangle r4 = r2; //shallow copy
+            r2.l = 10;
             r.Area();
             r1.Area();
             r2.Area();
             r3.Area();
+            r4.Area();
 
         }
     }
