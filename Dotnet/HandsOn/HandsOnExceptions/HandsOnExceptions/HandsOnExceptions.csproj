@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <StartupObject>HandsOnExceptions.BookTicket</StartupObject>
+    <StartupObject>HandsOnExceptions.Demo01</StartupObject>
   </PropertyGroup>
 
 </Project>

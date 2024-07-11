@@ -41,7 +41,7 @@ namespace HandsOnInheritance
             ob.Show();
             YYY ob1=new YYY(12,89);
             ob.Show();
-            YYY ob2 = new YYY(8, 3);
+            YYY ob2 = null;
             ob2.Show();
 
         }

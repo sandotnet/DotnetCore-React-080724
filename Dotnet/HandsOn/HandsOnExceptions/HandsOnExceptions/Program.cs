@@ -11,6 +11,7 @@ namespace HandsOnExceptions
         static void Main(string[] args)
         {
 
+
             try
             {
                 int result;
@@ -19,9 +20,9 @@ namespace HandsOnExceptions
                 byte b = byte.Parse(Console.ReadLine());
                 result = a / b;
                 Console.WriteLine("Resullt: " + result);
-               
+
             }
-            
+
             catch (DivideByZeroException ex)
             {
                 Console.WriteLine("b value should not be 0");
