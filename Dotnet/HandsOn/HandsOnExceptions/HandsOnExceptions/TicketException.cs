@@ -35,8 +35,10 @@ namespace HandsOnExceptions
             try
             {
                 if (no > 4)
-                    // throw new TicketException("Transaction Failed");
-                    throw new TicketException();
+                {
+                    throw new TicketException("Transaction Failed");
+                    //throw new TicketException();
+                }
                 else
                     Console.WriteLine("Transaction Success.");
             }
@@ -58,10 +60,7 @@ namespace HandsOnExceptions
             {
 
             }
-            finally
-            {
-
-            }
+            
         }
     }
 }

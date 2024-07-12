@@ -22,17 +22,11 @@ namespace HandsOnInheritance
         public string type;
          new public void Details()
         {
-            base.Details(); //calls Employee Details()
+           base.Details(); //calls Employee Details()
             Console.WriteLine("Manager Type: " + type);
         }
     }
-    class ProjectManager:Manager
-    {
-         new public void Details()
-        {
-            base.Details(); //invoke Manager Details
-        }
-    }
+  
     class Demo7
     {
         static void Main()

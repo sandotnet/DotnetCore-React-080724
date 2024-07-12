@@ -26,6 +26,8 @@ namespace HandsOnClassTypes
         static void Main()
         {
             B obj = new B();
+            obj.M1();
+            obj.M2();
 
         }
     }

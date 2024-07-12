@@ -34,16 +34,16 @@ namespace HandsOnInheritance1
             this.level = level;
             this.projects = projects;
         }
-        //public override void Details()
-        //{
-        //    base.Details();
-        //    Console.WriteLine($"Level Of Manager:{level}");
-        //    Console.WriteLine("Projects Handled:");
-        //    foreach(var k in projects)
-        //    {
-        //        Console.Write(k + " ");
-        //    }
-        //}
+        public override void Details()
+        {
+            base.Details();
+            Console.WriteLine($"Level Of Manager:{level}");
+            Console.WriteLine("Projects Handled:");
+            foreach (var k in projects)
+            {
+                Console.Write(k + " ");
+            }
+        }
     }
     class Demo8
     {
