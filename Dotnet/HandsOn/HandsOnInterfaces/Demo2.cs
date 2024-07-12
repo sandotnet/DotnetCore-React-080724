@@ -25,7 +25,7 @@ namespace HandsOnInterfaces
 
         public void M2()
         {
-            Console.WriteLine("M1:IB");
+            Console.WriteLine("M2:IB");
         }
         //explicit implementation
          void IA.Discount()
