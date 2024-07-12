@@ -9,30 +9,31 @@ namespace HandsOnMethods
     //MEthod overloading
     class Demo5
     {
-        public static int Add(int a,int b)
+        public  int Add(int a,int b)
         {
             return a + b;
         }
-        public static int Add(int a,int b,int c)
+        public  int Add(int a,int b,int c)
         {
             return a + b + c;
         }
-        public static double Add(double a,double b)
+        public  double Add(double a,double b)
         {
             return a + b;
         }
-        public static double Add(float a, float b)
+        public  double Add(float a, float b)
         {
             return a + b;
         }
         static void Main()
         {
-            Add(1, 2);
-            Add(12.2, 23.3);
-            Add(12d, 10d);
-            Add(12, 23, 34);
-            Add(23, 45);
-            Add(23f, 45.6f);
+            Demo5 obj=new Demo5();
+            obj.Add(1, 2);
+            obj.Add(12.2, 23.3);
+            obj.Add(12d, 10d);
+            obj.Add(12, 23, 34);
+            obj.Add(23, 45);
+            obj.Add(23f, 45.6f);
         }
     }
 }
