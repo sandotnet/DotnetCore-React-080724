@@ -9,9 +9,19 @@ namespace HandsOnExceptions
 //Application Exception or User defind exception
     class TicketException:Exception
     {
+        string message;
+        public TicketException(string message)
+        {
+            this.message = message;
+        }
+        public TicketException()
+        {
+            
+        }
         public override string Message
         {
-            get { return "Not allow to book more than 3 tickets.\nTransaction Faild"; }
+           // get { return "Not allow to book more than 3 tickets.\nTransaction Faild"; }
+           get { return message; }
         }
         public string ErrMessage
         {
@@ -25,6 +35,7 @@ namespace HandsOnExceptions
             try
             {
                 if (no > 4)
+                    // throw new TicketException("Transaction Failed");
                     throw new TicketException();
                 else
                     Console.WriteLine("Transaction Success.");
@@ -32,7 +43,7 @@ namespace HandsOnExceptions
             catch(TicketException ex)
             {
                 Console.WriteLine(ex.Message);
-                //Console.WriteLine(ex.ErrMessage);
+               Console.WriteLine(ex.ErrMessage);
             }
         }
         static void Main()

@@ -10,8 +10,6 @@ namespace HandsOnExceptions
     {
         static void Main(string[] args)
         {
-
-
             try
             {
                 int result;

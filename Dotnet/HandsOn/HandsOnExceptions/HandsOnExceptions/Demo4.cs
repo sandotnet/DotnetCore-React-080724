@@ -8,29 +8,26 @@ namespace HandsOnExceptions
 {
     class Demo4
     {
-        public static int Sum(int a,int b)
+        public static int Div(int a,int b)
         {
             try
             {
-                int c = a + b;
+                int c = a / b;
                 return c;
             }
             catch(DivideByZeroException ex)
             {
                 throw ex;
-                //return 0;
+              
             }
-            finally
-            {
-                Console.WriteLine("Good Morning EveryOne!!");
-            }
+           
         }
         static void Main()
         {
 
             try
             {
-                Console.WriteLine(Sum(12, 2));
+                Console.WriteLine(Div(12, 10));
             }
             catch (Exception ex)
             {

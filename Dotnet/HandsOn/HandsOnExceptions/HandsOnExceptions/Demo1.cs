@@ -13,11 +13,14 @@ namespace HandsOnExceptions
             try
             {
                 int a = 10;
-                int b = 0;
+                Console.WriteLine("Enter b value");
+                int b =int.Parse(Console.ReadLine());
                 int result = 0;
                 if (b == 0)
                 {
-                    throw new DivideByZeroException("b should not be 0");
+                    DivideByZeroException obj=new DivideByZeroException("b value should not 0");
+                    throw obj;
+                   // throw new DivideByZeroException("Dont be enter 0 for b");
                 }
                 else
                 {
@@ -29,17 +32,13 @@ namespace HandsOnExceptions
             catch (DivideByZeroException ex)
             {
                 Console.WriteLine(ex.Message);
-                //Console.WriteLine("b shold not be 0");
             }
-            catch(FormatException ex)
-            {
-
-            }
+            
             catch(Exception ex) //handle all the types of exceptions.
             {
 
             }
-            Console.ReadKey();
+          
         }
     }
 }
