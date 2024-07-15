@@ -26,6 +26,7 @@ namespace HandsOnClassTypes
             obj.AddEmployee();
             obj.DeleteEmployee(1);
             obj.GetEmployees();
+            
         }
     }
 }

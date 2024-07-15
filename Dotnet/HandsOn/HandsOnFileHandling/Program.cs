@@ -25,11 +25,11 @@ namespace HandsOnFileHandling
         {
             try
             {
-                FileDemo.Create("D:/sample.txt");
-                Console.WriteLine("Enter File Path");
-                string path = Console.ReadLine();
-                FileDemo.Read("D:/sample1.txt");
-                FileDemo.Write("D:/sample1.txt");
+               // FileDemo.Create("D:/sample.txt");
+                //Console.WriteLine("Enter File Path");
+                //string path = Console.ReadLine();
+                //FileDemo.Read(path);
+                FileDemo.Write("D:/sample.txt");
             }
             catch (IOException ex)
             {
