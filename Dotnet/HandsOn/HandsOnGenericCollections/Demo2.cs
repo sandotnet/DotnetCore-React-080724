@@ -71,75 +71,82 @@ namespace HandsOnGenericCollections
     {
         static void Main()
         {ProductRepository repository = new ProductRepository();
-            do
+            try
             {
-                Console.WriteLine("1.Add\n2.GetById\n3.GetAll\n4.Update\n5.Delete\n6.Exist");
-                Console.WriteLine("Select Option");
-                int op=int.Parse(Console.ReadLine());  
-                switch(op)
+                do
                 {
-                    case 1: //Add Product
-                        {
-                            Product product=new Product();
-                            product.Id = new Random().Next();
-                            Console.WriteLine("Enter Name");
-                            product.Name = Console.ReadLine();
-                            Console.WriteLine("Enter Price");
-                            product.Price = int.Parse(Console.ReadLine());
-                            repository.AddProduct(product);
-                        }
-                        break;
-                    case 2: //Search Product
-                        {
-                            Console.WriteLine("Enter Product Id");
-                            int id=int.Parse(Console.ReadLine());
-                            Product product=repository.GetProductById(id);
-                            if (product != null)
+                    Console.WriteLine("1.Add\n2.GetById\n3.GetAll\n4.Update\n5.Delete\n6.Exist");
+                    Console.WriteLine("Select Option");
+                    int op = int.Parse(Console.ReadLine());
+                    switch (op)
+                    {
+                        case 1: //Add Product
                             {
-                                Console.WriteLine(product.ToString());
+                                Product product = new Product();
+                                product.Id = new Random().Next();
+                                Console.WriteLine("Enter Name");
+                                product.Name = Console.ReadLine();
+                                Console.WriteLine("Enter Price");
+                                product.Price = int.Parse(Console.ReadLine());
+                                repository.AddProduct(product);
                             }
-                            else
-                                Console.WriteLine("Invalid Id");
-                        }
-                        break;
-                    case 3: //Get All Products
-                        {
-                            List<Product> products = repository.GetAllProducts();
-                            if (products.Count > 0)
+                            break;
+                        case 2: //Search Product
                             {
-                                foreach (var item in products)
+                                Console.WriteLine("Enter Product Id");
+                                int id = int.Parse(Console.ReadLine());
+                                Product product = repository.GetProductById(id);
+                                if (product != null)
                                 {
-                                    Console.WriteLine(item);
+                                    Console.WriteLine(product.ToString());
                                 }
+                                else
+                                    Console.WriteLine("Invalid Id");
                             }
-                            else
-                                Console.WriteLine("List is Empty");
-                        }
-                        break;
-                    case 5: //delete product
-                        {
-                            Console.WriteLine("Enter Product Id");
-                            int id = int.Parse(Console.ReadLine());
-                            repository.RemoveProduct(id);
-                        }
-                        break;
-                    case 4: //update product
-                        {
-                            Product product = new Product();
-                            product.Id = int.Parse(Console.ReadLine()) ;
-                            Console.WriteLine("Enter Price");
-                            product.Price = int.Parse(Console.ReadLine());
-                            repository.UpdateProduct(product);
-                        }
-                        break;
-                    case 6:
-                        Environment.Exit(0);
-                        break;
-                    default:
-                        Console.WriteLine("Invalid Option");
-                        break;
-                }
-            }while(true);
+                            break;
+                        case 3: //Get All Products
+                            {
+                                List<Product> products = repository.GetAllProducts();
+                                if (products.Count > 0)
+                                {
+                                    foreach (var item in products)
+                                    {
+                                        Console.WriteLine(item);
+                                    }
+                                }
+                                else
+                                    Console.WriteLine("List is Empty");
+                            }
+                            break;
+                        case 5: //delete product
+                            {
+                                Console.WriteLine("Enter Product Id");
+                                int id = int.Parse(Console.ReadLine());
+                                repository.RemoveProduct(id);
+                            }
+                            break;
+                        case 4: //update product
+                            {
+                                Product product = new Product();
+                                product.Id = int.Parse(Console.ReadLine());
+                                Console.WriteLine("Enter Price");
+                                product.Price = int.Parse(Console.ReadLine());
+                                repository.UpdateProduct(product);
+                            }
+                            break;
+                        case 6:
+                            Environment.Exit(0);
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Option");
+                            break;
+                    }
+                } while (true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
