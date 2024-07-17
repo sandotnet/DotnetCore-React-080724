@@ -36,7 +36,9 @@ namespace HandsOnDelegates
             Demo3 obj = new Demo3();
             obj.Callback(obj.Task);
             obj.Callback(obj.Greet);
+            obj.Callback(() => Console.WriteLine("Hello " + "Virat"));
             Demo3 obj2= new Demo3(obj.Task);
+            Demo3 obj4= new Demo3(()=>Console.WriteLine("Operation in Process!!!"));
 
         }
     }

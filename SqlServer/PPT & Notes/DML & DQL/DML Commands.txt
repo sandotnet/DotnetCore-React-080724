@@ -1,0 +1,101 @@
+
+
+-- DATA MANIPULATION LANGUAGE (DML):
+
+
+-- INSERT - Insert data into a table 
+-- UPDATE - Updates existing data within a table 
+-- DELETE - Deletes all records from a table, the space for the records remain 
+
+
+-- ============================================================
+-- INSERT Statement
+-- ============================================================
+
+-- INSERT Statement Syntax
+
+-- INSERT [INTO] <Table_Name> [(Column_List)]
+-- VALUES(DEFAULT | NULL | Expression | Value_List)
+
+Insert Into EmployeeDetail(FirstName, MiddleName, LastName, BirthDate, Gender)
+Values('Ganesh',' ','B.','2001/12/01','M')
+
+Insert Into EmployeeDetail(FirstName, MiddleName, LastName, BirthDate, Gender)
+Values('Harsha',NULL,'G.','2006/10/01','M')
+
+Insert Into EmployeeDetail(FirstName, MiddleName, LastName, BirthDate, Gender)
+Values('Mounika',NULL,'G.','2006/10/01','F')
+
+Insert Into EmployeeDetail(FirstName, LastName, BirthDate, Gender)
+Values('Basavaraj','P.','2006/10/01','M')
+
+Insert Into EmployeeDetail( FirstName, LastName, BirthDate)
+Values('Vishal','P.','2006/10/01')
+
+Insert Into EmployeeDetail(EmployeeID, FirstName, LastName, BirthDate, Gender)
+Values(6, 'Ramesh','P.','2006/10/01','F')
+
+Insert Into EmployeeDetail(EmployeeID, FirstName, LastName, BirthDate, Gender)
+Values(7, 'Nisha','P.','2006/10/01',Default)
+
+Insert Into EmployeeDetail(EmployeeID, FirstName, LastName, BirthDate, Gender)
+Values(8, 'Mahesh','A.','2006/10/01','M')
+	, (9, 'Radha','P.','2006/10/01','F')
+
+Insert Into EmployeeDetail
+Values(10, 'Manisha',NULL,'P.','2006/10/01',Default)
+
+select *
+from EmployeeDetail
+
+-- ============================================================
+-- UPDATE Statement
+-- ============================================================
+
+-- UPDATE Statement Syntax
+
+-- UPDATE <Table_Name> 
+-- SET Column_Name = Value [, Column1_Name = Value1]
+-- [WHERE <Condition>]
+
+
+Update EmployeeDetail
+Set FirstName = 'Dhananjay'
+Where EmployeeID = 2
+
+Update EmployeeDetail
+Set FirstName = 'Dhananjay', MiddleName = 'Kumar'
+Where EmployeeID = 2
+
+-- Excluding Where clause
+Update EmployeeDetail
+Set FirstName = 'Dhananjay', MiddleName = 'Kumar'
+
+
+select *
+from EmployeeDetail
+
+
+-- ============================================================
+-- DELETE Statement
+-- ============================================================
+
+-- DELETE Statement Syntax
+
+-- DELETE [FROM] <Table_Name> 
+-- [WHERE <Condition>]
+
+Delete From EmployeeDetail
+Where EmployeeID = 1
+
+Delete EmployeeDetail
+Where EmployeeID = 2
+
+Delete EmployeeDetail
+
+Truncate Table EmployeeDetail
+
+select *
+from EmployeeDetail
+
+

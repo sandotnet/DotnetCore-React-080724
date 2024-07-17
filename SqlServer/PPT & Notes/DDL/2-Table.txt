@@ -1,0 +1,82 @@
+
+
+-- =============================================
+-- Title:	Syntax to create a table using script
+-- =============================================
+
+CREATE TABLE 
+    [ database_name . [ schema_name ] . | schema_name . ] table_name 
+        ( { <column_definition> | <computed_column_definition> 
+                | <column_set_definition> }
+        [ <table_constraint> ] [ ,...n ] ) 
+    [ ON { partition_scheme_name ( partition_column_name ) | filegroup 
+        | "default" } ] 
+    [ { TEXTIMAGE_ON { filegroup | "default" } ] 
+    [ FILESTREAM_ON { partition_scheme_name | filegroup 
+        | "default" } ]
+    [ WITH ( <table_option> [ ,...n ] ) ]
+[ ; ]
+
+
+-- Table Creation Example
+USE AdventureWorks 
+GO
+
+CREATE TABLE Department 
+( 
+	dept_id INT not null, 
+	dept_name VARCHAR(20) NOT NULL, 
+	dept_desc VARCHAR(100) 
+)
+
+-- Table with IDENTITY Example
+USE AdventureWorks 
+GO
+
+CREATE TABLE Student 
+( 
+	stud_id INT IDENTITY(100,1), 
+	stud_fname VARCHAR(20) NOT NULL, 
+	stud_mname VARCHAR(20), 
+	stud_lname VARCHAR(20) NOT NULL, 
+	address VARCHAR(100) NOT NULL, 
+	tel_no VARCHAR(10) 
+)
+
+-- Creating a Table using SELECT INTO Example
+USE AdventureWorks 
+GO
+SELECT * INTO NewDepartment 
+FROM  HumanResources.Department
+
+-- Adding a new column stud_email
+USE AdventureWorks 
+GO
+ALTER TABLE Student ADD stud_email VARCHAR(50) NULL
+GO
+
+-- Dropping a column stud_email
+USE AdventureWorks 
+GO
+ALTER TABLE Student DROP COLUMN stud_email
+GO
+
+-- Changing the data type of a column tel_no
+USE AdventureWorks 
+GO
+ALTER TABLE Student ALTER COLUMN tel_no VARCHAR(50)
+GO
+
+-- Droping a Table 
+USE AdventureWorks 
+GO
+DROP TABLE Department
+GO
+
+-- Droping more than one table using single DROP TABLE statement
+USE AdventureWorks 
+GO
+DROP TABLE Department, Student
+GO
+
+

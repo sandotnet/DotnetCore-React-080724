@@ -1,0 +1,43 @@
+Add Column
+----------
+ALTER TABLE table_name ADD column_name datatype Constraint_name
+
+Drop Column
+-----------
+ALTER TABLE table_name DROP COLUMN column_name
+
+To change the data type of a column in a table
+----------------------------------------------
+ALTER TABLE table_name ALTER COLUMN column_name datatype
+
+Add Constraint:
+---------------
+Alter table table_name add constraint constraint_id constraint_name(column_name)
+
+Add foregin key constraint
+--------------------------
+Alter table table_name add constraint constraint_id constraint_name(column_name)
+References table_name(column_name) //To add foreing key constraint.
+
+default constraint
+------------------
+alter table TableName 
+ add constraint constraint_id
+ default <value> for [column_name]
+
+ex: alter table TableName 
+ add constraint df_ConstraintNAme 
+ default getdate() for [OrderDate]
+
+Drop Constraint:
+----------------
+Alter table table_name drop constraint constraint_name
+
+
+
+
+
+
+
+
+

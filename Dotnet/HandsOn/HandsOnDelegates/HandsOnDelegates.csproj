@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>HandsOnDelegates.Demo3</StartupObject>
+    <StartupObject>HandsOnDelegates.Demo4</StartupObject>
   </PropertyGroup>
 
 </Project>

@@ -1,0 +1,567 @@
+-- ============================================================
+-- SELECT Statement
+-- ============================================================
+
+-- SELECT Statement Syntax
+/*
+SELECT TOP(n) PERCENT Distinct [* | Column_List]
+From [<table_name> | <View_Name> | <Subquery>]
+Where <condition>
+Group By Column_List
+Having <Condition>
+Order By <Column_List>
+Compute By <Column_List>
+*/
+
+-- Selecting AdventureWorks database for below queries execution.
+-- Shortcut Key Combination: Ctrl + U
+USE AdventureWorks
+GO
+
+-- Retrieving all columns and all rows from Person.Contact table
+SELECT *
+FROM Person.Contact
+GO
+
+-- Retrieving specific columns and all rows from Person.Contact table
+SELECT 
+	ContactID
+	, FirstName
+	, MiddleName
+	, LastName
+	, EmailAddress
+	, Phone
+FROM 
+	Person.Contact
+GO
+
+-- Giving alias name to the columns.
+-- There are 3 ways to provide alias name to column headings.
+
+-- 1st Approach:
+SELECT 
+	ContactID
+	, FirstName as F_Name
+	, MiddleName
+	, LastName
+	, EmailAddress
+	, Phone
+FROM 
+	Person.Contact
+GO
+
+-- 2nd Approach:
+SELECT 
+	ContactID
+	, FirstName as F_Name
+	, MiddleName M_Name
+	, LastName
+	, EmailAddress
+	, Phone
+FROM 
+	Person.Contact
+GO
+
+-- 3rd Approach:
+SELECT 
+	ContactID
+	, FirstName as F_Name
+	, MiddleName M_Name
+	, L_Name = LastName
+	, EmailAddress
+	, Phone
+FROM 
+	Person.Contact
+GO
+
+-- Usage of [ ] square bracket. 
+SELECT
+	ContactID
+	, Title
+	, FirstName AS [F. Name]
+	, MiddleName
+	, LastName 
+	, EmailAddress
+	, Phone 
+FROM 
+	Person.Contact
+GO
+
+-- Usage of single quotes ' '. 
+SELECT
+	ContactID
+	, Title
+	, FirstName AS [F. Name]
+	, MiddleName
+	, LastName 
+	, EmailAddress AS 'Email ID'
+	, Phone 
+FROM 
+	Person.Contact
+GO
+
+-- Usage of Top(n)
+-- Below query will retrieve 19972 records.
+SELECT 
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName 
+	, EmailAddress
+	, Phone 
+FROM 
+	Person.Contact
+GO
+
+-- Below query will retrieve first 300 rows.	
+SELECT TOP(-300)
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName 
+	, EmailAddress
+	, Phone 
+FROM 
+	Person.Contact
+GO
+	
+-- TOP(n) value may not be negative. 
+SELECT TOP(-300)
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName 
+	, EmailAddress
+	, Phone 
+FROM 
+	Person.Contact	
+GO
+	
+-- Below query will retrieve 25% rows i.e. 4993 rows.	
+SELECT TOP(25) PERCENT
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName 
+	, EmailAddress
+	, Phone 
+FROM 
+	Person.Contact
+GO
+	
+-- Using PERCENT only accepts value between 0 and 100.	
+SELECT TOP(-25) PERCENT
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName 
+	, EmailAddress
+	, Phone 
+FROM 
+	Person.Contact	
+GO
+
+-- Below query will retrieve distinct names from FirstName column.
+SELECT 
+	DISTINCT FirstName
+FROM
+	Person.Contact
+GO
+	
+-- Below query will retrieve distinct names combining FirstName and LastName column values.
+SELECT 
+	DISTINCT FirstName, LastName
+FROM
+	Person.Contact
+GO
+
+-- Creating a derived column without column heading
+SELECT 
+	ContactID
+	, Title
+	, FirstName + ' ' + LastName
+FROM 
+	Person.Contact
+GO
+	
+-- Creating a derived column with a column heading	
+SELECT 
+	ContactID
+	, Title
+	, FirstName + ' ' + LastName AS [Employee Full Name]
+FROM 
+	Person.Contact	
+GO
+
+-- Creating a derived column using custom format i.e. (10) - ProductName
+SELECT 
+	ProductID
+	, '(' + cast(ProductID as varchar(50)) + ') - ' + Name as [Product Name]
+	, ListPrice AS [List Price]
+	, StandardCost AS [Product Standard Cost]
+FROM 
+	Production.Product
+GO
+
+-- Filtering records using WHERE clause
+SELECT 
+	ContactID
+	, Title
+	, FirstName + ' ' + LastName AS [Employee Full Name]
+FROM 
+	Person.Contact
+WHERE 
+	Title = 'Mr.'
+GO
+
+-- Sorting records using ORDER BY clause.
+SELECT 
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName
+FROM 
+	Person.Contact
+WHERE 
+	Title = 'Mr.'
+ORDER BY 
+	FirstName	
+GO
+
+-- Sorting records using ORDER BY clause but without using WHERE clause.
+SELECT 
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName
+FROM 
+	Person.Contact
+ORDER BY 
+	FirstName	
+GO
+
+-- By default, the ORDER BY clause sorts records in ASCENDING i.e. ASC order.
+SELECT 
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName
+FROM 
+	Person.Contact
+ORDER BY 
+	FirstName	
+GO
+
+-- We may specify ASC in order to enforce ascending order.
+SELECT 
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName
+FROM 
+	Person.Contact
+ORDER BY 
+	FirstName ASC	
+GO
+
+-- We may DESC in order to sort records in descending order.
+SELECT 
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName
+FROM 
+	Person.Contact
+ORDER BY 
+	FirstName DESC	
+GO
+
+-- Multiple column names can be used in order to sort the records.
+-- Below query will sort the records based on Title in ascending order first then
+-- sort the records under each Title using FirstName in ascending order.
+SELECT 
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName
+FROM 
+	Person.Contact
+ORDER BY 
+	Title, FirstName 	
+GO
+
+-- Every column in ORDER BY clause may have different sort order i.e. ASC or DESC.
+SELECT 
+	ContactID
+	, Title
+	, FirstName
+	, MiddleName
+	, LastName
+FROM 
+	Person.Contact
+ORDER BY 
+	Title ASC, FirstName DESC	
+GO
+
+-- ORDER BY clause accepts both original column name as well derived column name.
+SELECT 
+	ContactID
+	, Title
+	, FirstName AS F_Name
+	, MiddleName
+	, LastName
+FROM 
+	Person.Contact
+ORDER BY 
+	F_Name	
+GO
+
+-- ORDER BY clause accepts columns number in SELECT clause. Here, it's column number and 
+-- not the column index in SELECT clause.
+SELECT 
+	ContactID
+	, Title
+	, FirstName AS F_Name
+	, MiddleName
+	, LastName
+FROM 
+	Person.Contact
+ORDER BY 
+	2
+GO
+
+-- Using GROUP BY clause.
+-- Objective of GROUP BY clause is to summarize data. Below query will give result which 
+-- shows meaningless data.
+SELECT 
+	MaritalStatus
+	, EmployeeID
+FROM 
+	HumanResources.Employee
+GROUP BY 
+	MaritalStatus, EmployeeID
+GO
+
+-- If we wish to know how many married and how many single individuals are there, then
+-- grouping makes sense.
+SELECT 
+	MaritalStatus
+	, count(EmployeeID) TotalCount
+FROM 
+	HumanResources.Employee
+GROUP BY 
+	MaritalStatus
+GO
+
+-- Grouping based on Marital Status and then on Gender.
+SELECT 
+	MaritalStatus
+	, Gender
+	, count(EmployeeID) TotalCount
+FROM 
+	HumanResources.Employee
+GROUP BY 
+	MaritalStatus, Gender
+GO
+
+-- GROUP BY clause can have extra column that are mentioned in SELECT column list. And, it
+-- is considered for gouping records as well.
+SELECT 
+	MaritalStatus
+	, count(EmployeeID) TotalCount
+FROM 
+	HumanResources.Employee
+GROUP BY 
+	MaritalStatus, Gender
+GO
+
+-- Using HAVING clause, which acts on recordset returned by GROUP BY clause.
+SELECT 
+	MaritalStatus
+	, Gender
+	, count(EmployeeID) TotalCount
+FROM 
+	HumanResources.Employee
+GROUP BY 
+	MaritalStatus, Gender
+HAVING 
+	Gender = 'F'		
+GO
+
+SELECT 
+	MaritalStatus
+	, Gender
+	, count(EmployeeID) TotalCount
+FROM 
+	HumanResources.Employee
+GROUP BY 
+	MaritalStatus, Gender
+HAVING 
+	MaritalStatus = 'S'		
+GO
+
+-- Using CASE statement. ELSE part is optional here.
+SELECT 
+	CASE MaritalStatus WHEN 'M' THEN 'Married' 
+		WHEN 'S' THEN 'Single' 
+		ELSE 'Unknown'
+	END MarriageStatus    
+	, CASE WHEN Gender = 'M' THEN 'Male'
+			WHEN Gender = 'F' THEN 'Female' -- Else part is not mentioned here
+		END Sex			
+	, COUNT(EmployeeID) AS TotalCount
+FROM 
+	HumanResources.Employee
+GROUP BY 
+	MaritalStatus, Gender
+ORDER BY 
+	MaritalStatus, Gender
+GO
+
+-- CASE statement can be used in WHERE/GROUP BY/ORDER BY cluases as well.
+SELECT 
+	CASE MaritalStatus WHEN 'M' THEN 'Married' 
+		WHEN 'S' THEN 'Single' 
+		ELSE 'Unknown'
+	END MarriageStatus    
+	, CASE WHEN Gender = 'M' THEN 'Male'
+			WHEN Gender = 'F' THEN 'Female' -- Else part is not mentioned here
+		END Sex			
+	, COUNT(EmployeeID) AS TotalCount
+FROM 
+	HumanResources.Employee
+GROUP BY 
+	MaritalStatus,
+	CASE WHEN Gender = 'M' THEN 'Male'
+	WHEN Gender = 'F' THEN 'Female'
+	END
+ORDER BY 
+	MaritalStatus,
+	CASE WHEN Gender = 'M' THEN 'Male'
+	WHEN Gender = 'F' THEN 'Female'
+	END			
+GO
+
+-- Column(s) present in ORDER BY clause must be present in GROUP BY clause.
+-- Below query will throw an error.
+SELECT 
+	CASE MaritalStatus WHEN 'M' THEN 'Married' 
+		WHEN 'S' THEN 'Single' 
+		ELSE 'Unknown'
+	END MarriageStatus    
+	, CASE WHEN Gender = 'M' THEN 'Male'
+			WHEN Gender = 'F' THEN 'Female' -- Else part is not mentioned here
+		END Sex			
+	, COUNT(EmployeeID) AS TotalCount
+FROM 
+	HumanResources.Employee
+GROUP BY 
+	MaritalStatus, Gender
+ORDER BY 
+	EmployeeID
+GO
+
+-- Using COMPUTE BY clause for sub total figure. When using COMPUTE BY cluase, 
+-- the ORDER BY clause must be present in the query.
+SELECT 
+	YEAR(DueDate) AS [Sales Year]
+	, SalesOrderNumber
+	, PurchaseOrderNumber
+	, SubTotal
+	, TaxAmt
+	, Freight
+	, TotalDue
+FROM
+	Sales.SalesOrderHeader
+ORDER BY
+	YEAR(DueDate)		
+COMPUTE 
+	SUM(SubTotal), SUM(TaxAmt), SUM(Freight), SUM(TotalDue)   
+BY
+	YEAR(DueDate) 
+GO
+
+-- Using FOR XML clause. 
+-- It has got four option - (1) RAW, (2) AUTO, (3) PATH, and (4) EXPLICIT.
+
+-- Using RAW mode: 
+SELECT 
+	ContactID
+	, FirstName
+	, MiddleName
+	, LastName
+	, EmailAddress
+	, Phone
+FROM
+	Person.Contact
+FOR XML RAW	
+GO
+
+-- Using AUTO mode: 
+SELECT 
+	ContactID
+	, FirstName
+	, MiddleName
+	, LastName
+	, EmailAddress
+	, Phone
+FROM
+	Person.Contact
+FOR XML AUTO
+GO		
+
+-- Using PATH option: 
+SELECT 
+	ContactID 
+	, FirstName
+	, MiddleName
+	, LastName
+	, EmailAddress
+	, Phone
+FROM
+	Person.Contact
+FOR XML PATH
+GO
+
+-- NOTE: EXPLICIT mode requires understanding of XML concepts. Hence, it is not being 
+-- discussed over here.		 
+
+-- Using UNION clause
+Select ContactID, FirstName, LastName, EmailAddress
+From Person.Contact
+Where Title = 'Mr.'
+UNION
+Select ContactID, FirstName, LastName, EmailAddress
+From Person.Contact
+Where Title = 'Mrs.'
+UNION
+Select ContactID, FirstName, LastName, EmailAddress
+From Person.Contact
+Where Title = 'Sra.'
+
+
+-- Data type of columns in each query must match or must be compatible
+Select ContactID, FirstName
+From Person.Contact
+Where Title = 'Mr.'
+UNION ALL
+Select ContactID, FirstName
+From Person.Contact
+Where Title = 'Mr.' Or Title = 'Mrs.'
+
+-- Using ALL option in UNION clause
+
+
+
+

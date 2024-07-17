@@ -1,0 +1,141 @@
+
+
+-- **************************************************
+--	SUBQUERIES
+--	A subquery is a query that is nested inside a SELECT, 
+--	INSERT, UPDATE, or DELETE statement, or inside another 
+--	subquery. A subquery can be used anywhere an expression 
+--	is allowed. 
+-- **************************************************
+
+--	Usage:
+--	Statements that include a subquery usually take one of these formats: 
+--	1.	WHERE expression [NOT] IN (subquery)
+--	2.	WHERE expression comparison_operator [ANY | ALL] (subquery)
+--	3.	WHERE [NOT] EXISTS (subquery)
+
+
+-- **************************************************
+--	STANDARD SUBQUERY
+--	A standard subquery is subquery that is independent of the outer 
+--	query and it can executed on its own without relying on main outer query.
+
+--	Example 1:
+	USE AdventureWorks;
+	GO
+
+	SELECT t1.EmployeeID, t2.FirstName, t2.LastName
+	FROM HumanResources.Employee t1 INNER JOIN Person.Contact t2
+		ON t1.ContactID = t2.ContactID
+		INNER JOIN HumanResources.EmployeeDepartmentHistory t3
+		ON t3.EmployeeID = t1.EmployeeID
+	WHERE t3.DepartmentID IN
+	(
+		SELECT DepartmentID
+		FROM HumanResources.Department
+		WHERE Name IN ('Sales','Engineering')
+	)
+	ORDER BY t2.FirstName
+	GO
+
+	
+--	Example 2:
+	USE AdventureWorks;
+	GO
+	
+	SELECT e.EmployeeID
+	FROM HumanResources.Employee e
+	WHERE e.ContactID IN
+	(
+		SELECT c.ContactID
+		FROM Person.Contact c
+		WHERE c.Title = 'Mr.'
+	)
+	GO
+	
+--	Example 3:
+--	In this example a subquery is used as a column expression 
+--	named MaxUnitPrice in a SELECT statement.
+	USE AdventureWorks;
+	GO
+	
+	SELECT Ord.SalesOrderID, Ord.OrderDate,
+		(SELECT MAX(OrdDet.UnitPrice)
+		 FROM AdventureWorks.Sales.SalesOrderDetail AS OrdDet
+		 WHERE Ord.SalesOrderID = OrdDet.SalesOrderID) AS MaxUnitPrice
+	FROM AdventureWorks.Sales.SalesOrderHeader AS Ord
+	
+--	Example 4:
+--	The following query provides an example of a subquery introduced 
+--	with a comparison operator modified by ANY. It finds the products 
+--	whose list prices are greater than or equal to the maximum list 
+--	price of any product subcategory.
+	USE AdventureWorks;
+	GO
+	
+	SELECT Name
+	FROM Production.Product
+	WHERE ListPrice > 
+		(SELECT MAX (ListPrice)
+		 FROM Production.Product
+		 GROUP BY ProductSubcategoryID)
+
+--	Example 5:
+--	The =ANY operator is equivalent to IN. For example, to find the 
+--	names of all the wheel products that Adventure Works Cycles makes, 
+--	you can use either IN or =ANY.
+
+--	Using =ANY
+	USE AdventureWorks;
+	GO
+	
+	SELECT Name
+	FROM Production.Product
+	WHERE ProductSubcategoryID = ANY
+		(SELECT ProductSubcategoryID
+		 FROM Production.ProductSubcategory
+		 WHERE Name = 'Wheels')
+
+--	Using IN
+	USE AdventureWorks;
+	GO
+	
+	SELECT Name
+	FROM Production.Product
+	WHERE ProductSubcategoryID IN
+		(SELECT ProductSubcategoryID
+		 FROM Production.ProductSubcategory
+		 WHERE Name = 'Wheels')
+     
+--	Note:  
+--	The < >ANY operator, however, differs from NOT IN: 
+--	< >ANY means not = a, or not = b, or not = c. 
+--	NOT IN means not = a, and not = b, and not = c. 
+--	<>ALL means the same as NOT IN.
+
+--	Example 6:
+--	The following query finds the names of all products that 
+--	are in the Wheels subcategory:
+	USE AdventureWorks;
+	GO
+	
+	SELECT Name
+	FROM Production.Product
+	WHERE EXISTS
+		(SELECT * 
+		 FROM Production.ProductSubcategory
+		 WHERE ProductSubcategoryID = 
+				Production.Product.ProductSubcategoryID
+			AND Name = 'Wheels')
+
+--	Note:
+--	1.	The keyword EXISTS is not preceded by a column name, 
+--		constant, or other expression.
+
+--	2.	The select list of a subquery introduced by EXISTS 
+--		almost always consists of an asterisk (*). There is no 
+--		reason to list column names because you are just testing 
+--		whether rows that meet the conditions specified in the 
+--		subquery exist.         
+
+

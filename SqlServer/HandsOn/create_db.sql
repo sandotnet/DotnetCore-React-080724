@@ -1,0 +1,1 @@
+create database MyDB -- Create New Database

@@ -1,0 +1,87 @@
+
+CREATE DATABASE database_name 
+    [ ON 
+        [ PRIMARY ] [ <filespec> [ ,...n ] 
+        [ (
+				NAME = logical_file_name ,
+				FILENAME = { 'os_file_name' | 'filestream_path' } 
+				[ , SIZE = size [ KB | MB | GB | TB ] ] 
+				[ , MAXSIZE = { max_size [ KB | MB | GB | TB ] | UNLIMITED } ] 
+				[ , FILEGROWTH = growth_increment [ KB | MB | GB | TB | % ] ]
+			) ] 
+    [ LOG ON 
+		(
+				NAME = logical_file_name ,
+				FILENAME = { 'os_file_name' | 'filestream_path' } 
+				[ , SIZE = size [ KB | MB | GB | TB ] ] 
+				[ , MAXSIZE = { max_size [ KB | MB | GB | TB ] | UNLIMITED } ] 
+				[ , FILEGROWTH = growth_increment [ KB | MB | GB | TB | % ] ]
+		) ] 
+    ] 
+  
+   
+]
+[;]
+
+
+-- Database Creation Example
+USE master;
+GO
+-- Create the database with the default data
+-- filegroup and a log file. Specify the
+-- growth increment and the max size for the
+-- primary data file.
+CREATE DATABASE MyDB1
+ON PRIMARY
+  ( NAME='MyDB1_Primary',
+    FILENAME=
+       'C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\MyDB1_Prm.mdf',
+    SIZE=4MB,
+    MAXSIZE=10MB,
+    FILEGROWTH=1MB)
+LOG ON
+  ( NAME='MyDB1_log',
+    FILENAME =
+       'C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\MyDB1.ldf',
+    SIZE=1MB,
+    MAXSIZE=10MB,
+    FILEGROWTH=1MB);
+GO
+
+-- Database Creation Example With More Than One Data Files
+USE master;
+GO
+-- Create the database with the default data
+-- filegroup and a log file. Specify the
+-- growth increment and the max size for the
+-- primary data file.
+CREATE DATABASE MyDB2
+ON PRIMARY
+  ( NAME='MyDB_Primary',
+    FILENAME=
+       'C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\MyDB2_Prm.mdf',
+    SIZE=4MB,
+    MAXSIZE=10MB,
+    FILEGROWTH=1MB),
+FILEGROUP MyDB2_FG1
+  ( NAME = 'MyDB2_FG1_Dat1',
+    FILENAME =
+       'C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\MyDB2_FG1_1.ndf',
+    SIZE = 1MB,
+	MAXSIZE=10MB,
+    FILEGROWTH=1MB),
+  ( NAME = 'MyDB2_FG1_Dat2',
+    FILENAME =
+       'C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\MyDB2_FG1_2.ndf',
+    SIZE = 1MB,
+    MAXSIZE=10MB,
+    FILEGROWTH=1MB)
+LOG ON
+  ( NAME='MyDB2_log',
+    FILENAME =
+       'C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\MyDB2.ldf',
+    SIZE=1MB,
+    MAXSIZE=10MB,
+    FILEGROWTH=1MB);
+GO
+
