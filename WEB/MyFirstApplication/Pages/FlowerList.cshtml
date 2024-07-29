@@ -1,0 +1,20 @@
+﻿@page
+@model MyFirstApplication.Pages.FlowerListModel
+@{
+    string[] flowers = { "Rose", "Lilly", "Jasmine" };
+}
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Flower</th>
+        </tr>
+        @{
+            foreach (var item in flowers)
+            {
+                <tr>
+                    <td>@item</td>
+                </tr>
+            }
+        }
+    </table>
+</div>

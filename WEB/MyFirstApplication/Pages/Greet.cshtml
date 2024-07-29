@@ -1,0 +1,27 @@
+﻿@page
+@model MyFirstApplication.Pages.GreetModel
+@{
+}
+<div class="container">
+   <form method="post">
+       <table>
+           <tr>
+               <td>Enter Name</td>
+               <td>
+                   <input type="text" asp-for="@Model.Name" />
+               </td>
+           </tr>
+           <tr>
+               <td colspan="2">
+                   <input type="submit" value="Greet" />
+               </td>
+           </tr>
+           <tr>
+               <td colspan="2">
+                   <h1>Hello @Model.Name</h1>
+                   
+               </td>
+           </tr>
+       </table>
+   </form>
+</div>

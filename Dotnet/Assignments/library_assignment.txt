@@ -1,0 +1,6 @@
+1. Create a class library project TemperatureConvertor
+2. Create a class Temperature with following methods
+	a. public double CTF(double temp)
+	b. public double FTC(double temp)
+3. build the project
+4. Create a Console Client Project and test the TemperatrueConvertor Library functionalities.
