@@ -1,4 +1,4 @@
-﻿using HandsOnMVCValidations.CustomValidators;
+﻿
 using System.ComponentModel.DataAnnotations;
 namespace HandsOnMVCValidations.Models
 {
@@ -16,7 +16,7 @@ namespace HandsOnMVCValidations.Models
         [Required(ErrorMessage = "Pls Enter Mobile")]
         [RegularExpression("[6-9][0-9]{9}",ErrorMessage ="Invalid Mobile No")]
         public string? Mobile { get; set; }
-       [CountryValidator()]
+      
         public string? Country { get; set; }
         [Required(ErrorMessage = "Pls Enter Password")]
         [RegularExpression("[a-z0-9]{6,8}",ErrorMessage ="Password allow only 6 to 8 chars")]
