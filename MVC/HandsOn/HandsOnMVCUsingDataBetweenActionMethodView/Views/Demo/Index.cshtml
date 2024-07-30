@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@* Reading ViewData value *@
+<h1>@ViewData["title"]</h1>
+<div class="container">
+    @{
+        var flowers = ViewData["flower"] as string[];
+        foreach(var item in flowers)
+        {
+            <h1>@item</h1>
+        }
+
+    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Flower</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in ViewData["flower"] as string[])
+            {
+                <tr>
+                    <td>@item</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

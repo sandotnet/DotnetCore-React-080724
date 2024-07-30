@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@* Reading ViewData value *@
+<h1>@ViewBag.Title</h1>
+<div class="container">
+    @{
+        var flowers = ViewBag.Flowers;
+        foreach (var item in flowers)
+        {
+            <h1>@item</h1>
+        }
+
+    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Flower</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.Flowers)
+            {
+                <tr>
+                    <td>@item</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
