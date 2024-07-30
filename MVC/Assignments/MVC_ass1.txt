@@ -1,0 +1,15 @@
+1.Create a New MVC Project with proper name
+2.Create a Model named “Movie” with following properties : MovieId, Title, Actor, Lang,Director
+3.Create a MovieReposiotry class and add the following methods
+	a. GetAllMovies
+	b. GetMoieByName
+	c. AddMovie
+	d. DeleteMovie
+	e. EditMovie
+4.Create  MovieController add the follwing actions
+	1.Index() //dislay all the movies
+	2.Create(movie) //to create new movie
+	3.Delete(movieid) delete the movie
+	4.Details(name) display the details of the movie using name
+	5.Edit(Movie) edit the price of the book
+Note: create view templates for required actions 

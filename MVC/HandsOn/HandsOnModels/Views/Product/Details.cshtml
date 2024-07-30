@@ -1,0 +1,23 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    @if (Model != null)
+    {
+        <pre>
+                Id:@Model.Id
+                Name:@Model.Name
+                Description:@Model.Description
+                Price:@Model.Price
+            </pre>
+    }
+    else
+    {
+        <h3 class="text-warning">Product is empty!!!</h3>
+    }
+    <a asp-action="Index">back</a>
+</div>
+    
+
