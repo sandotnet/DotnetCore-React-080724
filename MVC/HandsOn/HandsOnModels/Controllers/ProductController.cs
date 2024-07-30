@@ -31,7 +31,7 @@ namespace HandsOnModels.Controllers
         {
             return View();
         }
-        [HttpPost]
+        [HttpPost] //this action invokes when user clicks on submit button in create page
         public IActionResult Add(Product product) 
             {
             productRepository.Add(product);

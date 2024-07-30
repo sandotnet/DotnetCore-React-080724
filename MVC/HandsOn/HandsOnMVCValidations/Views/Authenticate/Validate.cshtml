@@ -1,0 +1,37 @@
+﻿@model Login
+@{
+    ViewData["Title"] = "Validate";
+}
+
+<div class="container">
+    <form asp-action="Validate" method="post">
+        <table class="table table-bordered" style="width:50%">
+            <tbody>
+                <tr>
+                    <td>Username</td>
+                    <td>
+                        <input type="text" asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="SignIn" class="btn btn-info" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <span class="text-warning">@ViewBag.Error</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
