@@ -1,0 +1,12 @@
+Begin Transaction Trans  
+   Begin Try  
+      Delete From Employee Where Employee.Emp_IID<3  
+      Update Employee Set Employee.First_Name='Pankaj kumar' Where Employee.Emp_IID='6th' /* Error Will Occur Here */  
+    Commit Transaction Trans  
+   End  
+End Try  
+Begin Catch  
+   Print 'Error Is Occur in Transaction'  
+  Rollback Transaction Trans  
+End  
+End Catch  

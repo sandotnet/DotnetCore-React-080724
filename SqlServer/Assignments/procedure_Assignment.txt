@@ -1,0 +1,6 @@
+Write following procedures for the Product table.
+	1. GetAllProducts
+	2. GetProductByName
+	3. GetAllProductsBy>input Price
+	4. DeleteProductById
+	5. UpdateProduct(Update Price and Stock of the Product using Pid)
