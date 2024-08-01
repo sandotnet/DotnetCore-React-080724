@@ -1,4 +1,4 @@
-namespace HandsOnEFDBFirstCRUD
+namespace HandsOnAttributeRouting
 {
     public class Program
     {
@@ -18,13 +18,13 @@ namespace HandsOnEFDBFirstCRUD
             }
             app.UseStaticFiles();
 
-            app.UseRouting();
+            app.UseRouting(); //enable the attribute routing
 
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "MyApp/{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }
