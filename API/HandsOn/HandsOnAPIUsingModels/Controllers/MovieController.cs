@@ -8,21 +8,22 @@ namespace HandsOnAPIUsingModels.Controllers
     [ApiController]
     public class MovieController : ControllerBase
     {
-       private readonly IMovieRepository _movieRepository;
-        public MovieController()
+        private readonly IMovieRepository _movieRepository;
+        public MovieController(IMovieRepository _movieRepository)
         {
-            _movieRepository = new MovieRepository();
+           // _movieRepository = new MovieRepository();
+           this._movieRepository = _movieRepository;
         }
         //endpoints
         //Get All Movies
-        [HttpGet,Route("GetAll")]
+        [HttpGet, Route("GetAll")]
         public IActionResult GetMovies()
         {
             var movies = _movieRepository.GetAll();
             return Ok(movies);
         }
         [HttpGet, Route("GetMovie/{id}")]
-        public IActionResult GetMovie([FromRoute]int id)
+        public IActionResult GetMovie([FromRoute] int id)
         {
             try
             {
@@ -40,7 +41,7 @@ namespace HandsOnAPIUsingModels.Controllers
             }
         }
         [HttpGet, Route("GetMovieByTitle")]
-        public IActionResult GetMovieByTitle([FromQuery]string title)
+        public IActionResult GetMovieByTitle([FromQuery] string title)
         {
             try
             {
@@ -48,14 +49,20 @@ namespace HandsOnAPIUsingModels.Controllers
                 if (movie != null)
                     return StatusCode(200, movie);
                 else
-                    return StatusCode(404,"Invalid Id");
+                    return StatusCode(404, "Invalid Id");
             }
             catch (Exception ex)
             {
 
-                return StatusCode(500,ex.Message);
+                return StatusCode(500, ex.Message);
 
             }
+        }
+        [HttpPost, Route("AddMovie")]
+        public IActionResult AddMovie([FromBody] Movie movie)
+        {
+            _movieRepository.AddMovie(movie);
+            return StatusCode(200, movie);
         }
     }
 }
