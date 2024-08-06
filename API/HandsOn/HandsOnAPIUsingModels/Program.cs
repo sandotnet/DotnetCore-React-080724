@@ -29,7 +29,7 @@ namespace HandsOnAPIUsingModels
 
             app.MapControllers();
 
-                        app.MapMovieEndpoints();
+                       
 
             app.Run();
         }

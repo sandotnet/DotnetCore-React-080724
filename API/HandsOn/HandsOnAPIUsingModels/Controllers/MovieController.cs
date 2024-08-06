@@ -1,31 +1,32 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using HandsOnAPIUsingModels.Models;
+using HandsOnAPIUsingModels.Repositories;
 namespace HandsOnAPIUsingModels.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class MovieController : ControllerBase
     {
-       //data source
-        private readonly List<Movie> _movies=new List<Movie>()
+       private readonly IMovieRepository _movieRepository;
+        public MovieController()
         {
-            new Movie(){Id=33,Title="Kalki",Actor="Prabhas",Director="Nag Ashwin",ReleaseDate=new DateTime(2024,5,21)},
-             new Movie(){Id=35,Title="Jawan",Actor="Sharukh",Director="Atli",ReleaseDate=new DateTime(2023,11,11)},
-        };
+            _movieRepository = new MovieRepository();
+        }
         //endpoints
         //Get All Movies
         [HttpGet,Route("GetAll")]
         public IActionResult GetMovies()
         {
-            return Ok(_movies);
+            var movies = _movieRepository.GetAll();
+            return Ok(movies);
         }
         [HttpGet, Route("GetMovie/{id}")]
         public IActionResult GetMovie([FromRoute]int id)
         {
             try
             {
-                var movie = _movies.SingleOrDefault(m => m.Id == id);
+                var movie = _movieRepository.GetByById(id);
                 if (movie != null)
                     return Ok(movie);
                 else
@@ -35,6 +36,24 @@ namespace HandsOnAPIUsingModels.Controllers
             {
 
                 return BadRequest(ex.Message);
+
+            }
+        }
+        [HttpGet, Route("GetMovieByTitle")]
+        public IActionResult GetMovieByTitle([FromQuery]string title)
+        {
+            try
+            {
+                var movie = _movieRepository.GetByTitle(title);
+                if (movie != null)
+                    return StatusCode(200, movie);
+                else
+                    return StatusCode(404,"Invalid Id");
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500,ex.Message);
 
             }
         }
