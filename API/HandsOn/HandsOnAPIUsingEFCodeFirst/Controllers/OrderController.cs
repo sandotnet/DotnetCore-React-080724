@@ -11,12 +11,18 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrderRepository orderRepository;
-        public OrderController()
+
+        public OrderController(IOrderRepository orderRepository)
         {
-            orderRepository = new OrderRepository();
+            this.orderRepository = orderRepository;
         }
+
+        //public OrderController()
+        //{
+        //    orderRepository = new OrderRepository();
+        //}
         [HttpPost,Route("MakeOrder")]
-        public IActionResult MakeOrder(OrderDTO orderDto)
+        public IActionResult MakeOrder([FromBody]OrderDTO orderDto)
         {
             //assing orderDto to order entity
             var order = new Order()

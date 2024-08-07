@@ -5,10 +5,16 @@ namespace HandsOnAPIUsingEFCodeFirst.Repositories
     public class ProductRepository : IProductRepository
     {
         private readonly ECommContext _context;
-        public ProductRepository()
+
+        public ProductRepository(ECommContext context)
         {
-            _context = new ECommContext();
+            _context = context;
         }
+
+        //public ProductRepository()
+        //{
+        //    _context = new ECommContext();
+        //}
         public void Add(Product product)
         {
             _context.Products.Add(product);

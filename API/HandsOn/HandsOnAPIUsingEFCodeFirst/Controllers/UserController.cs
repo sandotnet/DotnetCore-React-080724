@@ -12,10 +12,16 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
-        public UserController()
+
+        public UserController(IUserRepository userRepository)
         {
-            _userRepository = new UserRepository();
+            _userRepository = userRepository;
         }
+
+        //public UserController()
+        //{
+        //    _userRepository = new UserRepository();
+        //}
         [HttpPost, Route("Register")]
         public IActionResult AddUser(User user)
         {
