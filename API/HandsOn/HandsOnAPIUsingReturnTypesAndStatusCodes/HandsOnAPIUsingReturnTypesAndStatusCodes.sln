@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandsOnAPIUsingReturnTypesAndStatusCodes", "HandsOnAPIUsingReturnTypesAndStatusCodes.csproj", "{8093813D-3295-424B-A90F-AF0243938314}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8093813D-3295-424B-A90F-AF0243938314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8093813D-3295-424B-A90F-AF0243938314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8093813D-3295-424B-A90F-AF0243938314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8093813D-3295-424B-A90F-AF0243938314}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF81D240-AAA4-44AA-9A18-FADD3A7BA48D}
+	EndGlobalSection
+EndGlobal

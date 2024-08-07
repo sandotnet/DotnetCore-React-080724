@@ -1,0 +1,6 @@
+@HandsOnAPIUsingModelValidation_HostAddress = http://localhost:5117
+
+GET {{HandsOnAPIUsingModelValidation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
