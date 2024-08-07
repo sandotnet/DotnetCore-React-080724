@@ -1,0 +1,6 @@
+@HandsOnDependencyInjection_Demo_HostAddress = http://localhost:5215
+
+GET {{HandsOnDependencyInjection_Demo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

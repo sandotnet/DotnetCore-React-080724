@@ -1,0 +1,12 @@
+1.Create BookApp MVC Project
+2.Create a table Book(BookId,BookName,Price,Author,Lang,ReleaseDate) and apply constraints
+3.Create a BookController and Perform CRUD functions on Book using Entity Framework DB First 
+	AddBook()
+	GetAllBooks()
+	GetBooksByAuthor(string Autor)
+	GetBooksByLang(string lang)
+	GetBooksByYear(int year)
+	EditBook()
+	DeleteBook(int bookId)
+
+4. Apply routing for BookController action methods
