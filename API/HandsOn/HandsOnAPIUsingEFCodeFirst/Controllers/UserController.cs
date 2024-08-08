@@ -33,12 +33,13 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
         {
             {
                 var user = _userRepository.ValidUser(login.Email,login.Password);
-                if (user != null)
-                {
-                    return Ok(user);
-                }
-                else
-                    return NotFound("Invalid UserDetails!!!");
+                //if (user != null)
+                //{
+                //    return Ok(user);
+                //}
+                //else
+                //    return NotFound("Invalid UserDetails!!!");
+                return Ok(user);
 
 
             }
