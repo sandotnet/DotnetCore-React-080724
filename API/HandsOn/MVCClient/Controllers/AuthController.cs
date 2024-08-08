@@ -33,11 +33,15 @@ namespace MVCClient.Controllers
                     {
                         if (user.Role == "User")
                         {
-                            return RedirectToAction("Welcome");
+                            return RedirectToAction("User-Dashboard");
                         }
                         else if(user.Role=="Admin")
                         {
                             return RedirectToAction("Admi-Dashboard");
+                        }
+                        else
+                        {
+                            return RedirectToAction("Welcome");
                         }
                     }
                     else

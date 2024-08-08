@@ -5,10 +5,17 @@ namespace HandsOnAPIUsingEFCodeFirst.Repositories
     public class UserRepository : IUserRepository
     {
         private readonly ECommContext _context;
+        private IConfiguration _configuration;
 
         public UserRepository(ECommContext context)
         {
             _context = context;
+        }
+
+        public UserRepository(ECommContext context, IConfiguration configuration)
+        {
+            _context = context;
+            _configuration = configuration;
         }
 
         //public UserRepository()
