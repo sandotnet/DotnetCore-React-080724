@@ -5,7 +5,7 @@ namespace HandsOnAPIUsingEFCodeFirst.Entities
     public class Product
     {
         [Key] //set Id as a Primary Key
-        [DatabaseGenerated(DatabaseGeneratedOption.None)] //disable identity
+       // [DatabaseGenerated(DatabaseGeneratedOption.None)] //disable identity
         public int ProductId { get; set; }
         [Column(TypeName ="varchar")] //set column type as varchar
         [StringLength(20)] //set size of the varchar

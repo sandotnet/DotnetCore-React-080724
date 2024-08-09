@@ -1,0 +1,23 @@
+Inserting data in multiple tables:
+----------------------------------
+create trigger after_insert
+on emp
+for insert 
+as
+insert dept(empid) select empid from inserted
+
+ALTER TRIGGER INSERTTRIGGER ON dbo.opportunitybase
+AFTER INSERT
+AS
+BEGIN
+
+DECLARE @Operation int
+DECLARE @opp_Name varchar(100)
+DECLARE @EstiCloseValue varchar(100)
+DECLARE @Opp_id uniqueidentifier
+SET @opp_Name = (SELECT NAME FROM INSERTED)
+SET @EstiCloseValue = (SELECT ModifiedOn FROM INSERTED)
+SET @Opp_id = (SELECT opportunityid FROM INSERTED)
+INSERT INTO UserTrigger (Name,EstiDate,oppid,flag) values (@opp_name,@EstiCloseValue , @Opp_id,'I')
+
+END
