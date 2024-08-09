@@ -1,6 +1,6 @@
---create table accounts(acno int primary key,bal money)
---insert accounts values(100,50000)
---insert accounts values(200,60000)
+create table accounts(acno int primary key,bal money)
+insert accounts values(100,50000)
+insert accounts values(200,60000)
 create procedure transferamount(
 @acno1 int,@acno2 int,@amount money)
 as
@@ -20,5 +20,5 @@ print 'Transaction Successfull'
 commit transaction
 end
 end
-exec transferamount 100,200,50000
+exec transferamount 100,200,30000
 select * from accounts
