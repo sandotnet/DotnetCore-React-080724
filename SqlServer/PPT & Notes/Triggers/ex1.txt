@@ -1,0 +1,18 @@
+For example, let's say you want to send an email to the Sales Manager when an order is entered whose priority is high.
+
+CREATE TABLE Orders (Ord_ID int IDENTITY, Ord_Priority varchar(10))
+go
+CREATE TRIGGER tr_Orders_INSERT
+ON Orders
+FOR INSERT
+AS
+IF ((SELECT COUNT(*) FROM inserted WHERE Ord_Priority = 'High') = 1)
+ BEGIN
+  PRINT 'Email Code Goes Here'
+ END
+go
+INSERT Orders (Ord_Priority) VALUES ('High')
+
+-- Results --
+
+Email Code Goes Here

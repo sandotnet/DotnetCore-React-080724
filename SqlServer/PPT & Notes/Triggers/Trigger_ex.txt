@@ -1,0 +1,36 @@
+createtable vendors_info
+ (
+ vendoridint,
+ vendornamevarchar(15),
+ vendorcityvarchar(15),
+ vendorstatevarchar(15)
+ )
+
+
+insertinto vendors_info values (20,'vipendra','noida','up')
+insertinto vendors_info values (21,'deepak','lucknow','up')
+insertinto vendors_info values (22,'rahul','kanpur','up')
+insertinto vendors_info values (23,'malay','delhi','delhi')
+insertinto vendors_info values (24,'mayank','noida','up')
+
+
+CREATETRIGGER vendor_trigger
+ONvendors_info
+AFTERINSERT,UPDATE 
+AS
+UPDATEdbo.vendors_info
+SETvendorcity =UPPER(vendorcity)
+WHEREvendorid IN(SELECTvendorid FROMINSERTED)
+
+
+INSERTINTO dbo.vendors_info
+       (vendorid ,
+         vendorname ,
+         vendorcity ,
+          vendorstate
+        )
+VALUES ( 25, -- vendorid - int
+         'neha' ,-- vendorname - varchar(15)
+         'lucknow' ,-- vendorcity - varchar(15)
+         'up'  -- vendorstate - varchar(15)
+        )

@@ -1,0 +1,26 @@
+DDL triggers can be created in either in the Database or the Server. 
+If you want to monitor table creations and drops, you should create DDL trigger on the database, 
+while to monitor operations like database creations you should create a DDL trigger on the Server.
+
+CREATE TRIGGER ddl_trig_database 
+ON ALL SERVER 
+FOR CREATE_DATABASE 
+AS 
+    PRINT 'Access denied'
+rollback transaction
+    
+GO
+
+DROP TRIGGER ddl_trig_database
+ON ALL SERVER;
+GO
+
+create trigger safety
+on 
+database
+for drop_table,alter_table
+as
+
+print 'access denied'
+rollback transaction
+go
