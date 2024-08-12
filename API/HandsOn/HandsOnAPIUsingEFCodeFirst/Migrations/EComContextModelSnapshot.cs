@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HandsOnAPIUsingEFCodeFirst.Migrations
 {
-    [DbContext(typeof(ECommContext))]
-    partial class ECommContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(EComContext))]
+    partial class EComContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

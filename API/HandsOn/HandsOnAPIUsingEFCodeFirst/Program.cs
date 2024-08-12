@@ -15,8 +15,10 @@ namespace HandsOnAPIUsingEFCodeFirst
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddDbContext<ECommContext>(); //Register ECommContext class to DIC
+            builder.Services.AddDbContext<EComContext>(); //Register ECommContext class to DIC
             builder.Services.AddTransient<IProductRepository, ProductRepository>();
+            builder.Services.AddTransient<IProductAsyncRepository, ProductAsyncRepository>();
+
             builder.Services.AddTransient<IOrderRepository, OrderRepository>();
             builder.Services.AddTransient<IUserRepository, UserRepository>();
             builder.Services.AddControllers();

@@ -2,11 +2,11 @@
 
 namespace HandsOnAPIUsingEFCodeFirst.Entities
 {
-    public class ECommContext:DbContext
+    public class EComContext:DbContext
     {
         private IConfiguration _configuration;
 
-        public ECommContext(IConfiguration configuration)
+        public EComContext(IConfiguration configuration)
         {
             _configuration = configuration;
         }

@@ -4,8 +4,8 @@ namespace HandsOnAPIUsingEFCodeFirst.Repositories
 {
     public class OrderRepository : IOrderRepository
     {
-        private readonly ECommContext _context;
-        public OrderRepository(ECommContext context)
+        private readonly EComContext _context;
+        public OrderRepository(EComContext context)
         {
             _context = context;
         }
