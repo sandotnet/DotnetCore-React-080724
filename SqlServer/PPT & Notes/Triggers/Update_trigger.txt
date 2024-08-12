@@ -1,0 +1,8 @@
+create trigger after_trig
+on dept
+for update
+as
+if update (deptid)
+rollback transaction
+print 'access denied'
+go

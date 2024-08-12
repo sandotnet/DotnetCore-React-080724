@@ -4,8 +4,13 @@
     {
        public static void Method1()
         {
+<<<<<<< HEAD
             Console.WriteLine("METHOD 1 Started..");
             Thread.Sleep(TimeSpan.FromSeconds(10)); //waits the code execution
+=======
+            Console.WriteLine("Method 1 Started..");
+            //Thread.Sleep(TimeSpan.FromSeconds(10));
+>>>>>>> fa3f6e3f04414bedcc588644259a845364845a32
             Console.WriteLine("Method 1 End..");
         }
         public async static void Method2()
@@ -26,6 +31,7 @@
             Console.WriteLine("Main Method Started...");
             // Method1();
             Method2();
+            Method1();
             Console.WriteLine("Main Method End..");
             Console.ReadKey();
         }

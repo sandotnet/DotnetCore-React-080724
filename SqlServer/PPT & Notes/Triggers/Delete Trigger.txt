@@ -1,0 +1,13 @@
+CREATE TRIGGER tr_Orders_DELETE
+ON Orders
+AFTER DELETE
+AS
+
+--Determine if Order with a Priority of High was deleted
+IF EXISTS (SELECT * FROM deleted WHERE Ord_Priority = 'High')
+ BEGIN
+  DECLARE @Count tinyint
+  SET @Count = (SELECT * FROM deleted WHERE Ord_Priority = 'High')
+  PRINT CAST(@Count as varchar(3))+' row(s) where deleted whose priority was High'
+ END
+go

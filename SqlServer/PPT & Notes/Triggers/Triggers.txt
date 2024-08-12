@@ -1,0 +1,109 @@
+Triggers are two types in sqlserver 2005.
+1.    DML Triggers
+Defination:
+-----------
+
+        INSTEAD OF Triggers
+2.    DDL Triggers
+3.    CLR Triggers
+Note:DDL and CLR Triggers cannot work in SQL Server 2000
+DML Trigger:-These Trigger is fired only when INSERT, UPDATE, and DELETE Statement occurs in table.
+
+1) After Triggers: 
+After Triggers can be created in 3 ways.
+1)    After INSERT
+2)    After UPDATE
+3)    After DELETE
+
+1) creating After INSERT Trigger:-
+---------------------------------
+
+Syntax:
+create trigger triggername
+on tablename
+AFTER/For INSERT
+As
+[SQL Statement/PRINT command]
+GO
+
+Eg:
+create trigger afterinsert_trigger
+on emp
+AFTER INSERT
+as
+PRINT 'AFTER TRIGGER EXECUTED SUCESSFULLY'
+GO
+
+Creating AFTER UPDATE TRIGGER:-
+-------------------------------
+
+create trigger afterupdate_trigger
+
+on emp
+
+AFTER UPDATE
+
+as
+
+PRINT 'AFTER UPDATE TRIGGER EXECUTED SUCESSFULLY'
+
+GO
+
+Creating AFTER DELETE TRIGGER:
+------------------------------
+
+Create trigger afterdelete_trigger
+
+On emp
+
+AFTER DELETE
+
+as
+
+PRINT 'AFTER DELETE TRIGGER EXECUTED SUCESSFULLY'
+GO
+
+Instead Of Update Trigger
+-------------------------
+
+Creating INSTEAD OF UPDATE TRIGGER:-
+----------------------------------
+
+create trigger insteadofupdate_trigger
+on emp
+INSTEAD OF UPDATE
+as
+PRINT 'INSTEAD OF UPDATE TRIGGER EXECUTED SUCESSFULLY'
+GO
+
+Creating INSTEAD OF DELETE TRIGGER:-
+------------------------------------
+
+create trigger insteadofdelete_trigger
+on emp
+INSTEAD OF DELETE
+as
+PRINT 'INSTEAD OF DELETE TRIGGER EXECUTED SUCESSFULLY'
+GO
+
+
+ Drop a Trigger
+---------------
+
+Syntax: DROP TRIGGER [triggername]
+
+Eg: DROP TRIGGER afterinsert_trigger
+
+GO
+Triggers cannot be called explicitly, they are fired automatically when any one of the update, delete or insert event happens
+
+create trigger tri_update on Emp
+for update
+as
+begin
+if update(EmpID)
+begin
+print'not update here'
+rollback transaction
+end
+end

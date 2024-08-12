@@ -9,6 +9,7 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
     [ApiController]
     public class DemoController : ControllerBase
     {
+<<<<<<< HEAD
         private readonly IProductAsyncRepository _productAsyncRepository;
 
         public DemoController(IProductAsyncRepository productAsyncRepository)
@@ -46,5 +47,41 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
         }
 
 
+=======
+        private readonly IProuctAsyncRepository repository;
+
+        public DemoController(IProuctAsyncRepository repository)
+        {
+            this.repository = repository;
+        }
+        [HttpGet,Route("GetAll")]
+        public async Task<IActionResult> GetAll()
+        {
+            return  Ok(await repository.GetAll());
+        }
+        [HttpGet,Route("GetById/{id}")]
+        public async Task<IActionResult> Get([FromRoute]int id)
+        {
+           return Ok(await repository.GetById(id));
+        }
+        [HttpPost,Route("AddProduct")]
+        public async Task<IActionResult> Add(Product product)
+        {
+            await repository.Add(product);
+            return Ok(product);
+        }
+        [HttpPut, Route("EditProduct")]
+        public async Task<IActionResult> Edit(Product product)
+        {
+            await repository.Update(product);
+            return Ok(product);
+        }
+        [HttpDelete,Route("Delete")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await repository.DeleteById(id);
+            return Ok();
+        }
+>>>>>>> fa3f6e3f04414bedcc588644259a845364845a32
     }
 }

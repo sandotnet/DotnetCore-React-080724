@@ -1,0 +1,5 @@
+Triggers are used two special tables called inserted and deleted tables
+The inserted table contains the data referenced in an INSERT before it is actually committed to the database. The deleted table contains the data in the underlying table referenced in a DELETE before it is actually removed from the database. When an UPDATE is issued both tables are used. More specifically, the new data referenced in the UPDATE statement is contained in inserted and the data that is being updated is contained in deleted. 
+Instead of Trigger - its constraints level trigger.It firstly check constraints.
+
+After Trigger-It execute after the executation of condotion.

@@ -7,12 +7,17 @@ namespace HandsOnAPIUsingEFCodeFirst.Repositories
         private readonly EComContext _context;
         private IConfiguration _configuration;
 
+<<<<<<< HEAD
         public UserRepository(EComContext context)
         {
             _context = context;
         }
 
         public UserRepository(EComContext context, IConfiguration configuration)
+=======
+       
+        public UserRepository(ECommContext context, IConfiguration configuration)
+>>>>>>> fa3f6e3f04414bedcc588644259a845364845a32
         {
             _context = context;
             _configuration = configuration;

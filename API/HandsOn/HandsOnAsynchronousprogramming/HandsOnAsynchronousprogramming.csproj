@@ -5,7 +5,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+<<<<<<< HEAD
     <StartupObject>HandsOnAsynchronousprogramming.Demo0_Synchronous</StartupObject>
+=======
+    <StartupObject>HandsOnAsynchronousprogramming.Demo0_Asynchronous</StartupObject>
+>>>>>>> fa3f6e3f04414bedcc588644259a845364845a32
   </PropertyGroup>
 
 </Project>
