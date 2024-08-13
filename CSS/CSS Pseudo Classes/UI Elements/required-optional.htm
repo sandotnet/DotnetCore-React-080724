@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<style>
+  :required {
+    outline: 3px solid green;}
+  :optional {
+    outline: 3px solid red;}
+
+</style>
+<body>
+ <form method="post" action="form_process1.php">
+  <p>
+   <label for="name">Name: <input required id="name" name="name"/></label>
+  </p>
+   <p>
+    <label for="name">NickName: <input id="Nick" name="Nick"/></label>
+   </p>
+  <button type="submit">Submit</button>
+</form>
+
+  <p>The Input with red outline is optional while the one with red
+  outline is required.</p>
+</body>
+</html>       
+	
