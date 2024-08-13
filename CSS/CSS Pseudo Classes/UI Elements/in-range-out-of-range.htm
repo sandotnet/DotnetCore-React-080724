@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<style>
+  :in-range {
+    outline: 3px solid green;
+   color:green;}
+
+  :out-of-range {
+    outline: 3px solid red;
+    color:red;}
+
+</style>
+<body>
+<form method="post" action="form_process1.php"> 
+  <p> 
+<label for="age"> What's your age: 
+     <input type="number" min="0" max="100" 
+                     value="1" id="age" name="age"/> 
+</label> 
+  </p> 
+     <input type="submit" value="Submit"/> 
+</form>
+</body>
+</html>       
+	
