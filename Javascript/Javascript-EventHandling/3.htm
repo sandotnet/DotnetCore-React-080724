@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SetColor() {
+            //fetch value from dropdown
+            let c = document.getElementById('ddlColor').value;
+            document.body.style.backgroundColor = c;
+        }
+    </script>
+</head>
+
+<body onload="SetColor()">
+    <table>
+        <tr>
+            <td>Select Color</td>
+            <td>
+                <select id="ddlColor" onchange="SetColor()">
+                    <option>Red</option>
+                    <option>Blue</option>
+                    <option>Green</option>
+                    <option>Yellow</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

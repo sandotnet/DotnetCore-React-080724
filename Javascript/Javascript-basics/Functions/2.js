@@ -13,7 +13,15 @@ function IsEven(no) {
   return result; //retruning bool
 }
 //here a is array type
-function Sum(a) {
+// function Sum(a) {
+//   let sum = 0;
+//   for (let k of a) {
+//     sum = sum + k;
+//   }
+//   return sum;
+// }
+//result = Sum([12, 23, 34, 45, 55, 67]);
+function Sum(...a) {
   let sum = 0;
   for (let k of a) {
     sum = sum + k;
@@ -26,5 +34,7 @@ result = Sqaure(12);
 console.log(result);
 result = IsEven(12);
 console.log(result ? "Even" : "Odd");
-result = Sum([12, 23, 34, 45, 55, 67]);
+result = Sum(12, 23, 34, 45, 55, 67);
+console.log("Sum or Array no: " + result);
+result = Sum(23,34,45,56);
 console.log("Sum or Array no: " + result);

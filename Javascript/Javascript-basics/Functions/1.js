@@ -26,7 +26,7 @@ Note("Sachin");
 Note("Rahul", "Good Evening");
 function IsEven(no) {
   if (no % 2 == 0) console.log(`${no} is Even`);
-  else console.log(`${no} is Even`);
+  else console.log(`${no} is Odd`);
 }
 IsEven(10);
 IsEven(21);

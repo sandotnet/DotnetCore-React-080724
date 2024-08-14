@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>I am Para1</p>
+    <p>I am Para2</p>
+    <p>I am Para3</p>
+    <p>I am Para4</p>
+    <p>I am Para5</p>
+    <script>
+        //getelementsByTagName() retruns array of objects with the given tag name
+        let items = document.getElementsByTagName('p') //retunrs array of p objects
+        //access paragraph 3
+        let obj = items[2];
+        //change color of paragraph3
+        obj.style.color = 'yellow';
+        items[1].style.color = 'red';
+        //alert(obj.innerText)
+        // for (let k = 0; k < items.length; k++) {
+        //     alert(items[k].innerText)
+        // }
+        for (let k of items) {
+            alert(k.innerText)
+        }
+    </script>
+</body>
+
+</html>

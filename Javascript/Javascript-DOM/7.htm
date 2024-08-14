@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1 {
+            color: red;
+            background-color: blue;
+        }
+
+        .c2 {
+            color: blue;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="c1">I am Para1</p>
+    <h1 class="c1">I am Header1</h1>
+    <p class="c2">I am Para2</p>
+    <h2 class="c2">I am Header2</h2>
+    <script>
+        let items1 = document.getElementsByClassName('c1') //returns elements with css class c1
+        for (let k of items1)
+            alert(k.innerText)
+        let items2 = document.getElementsByClassName('c2') //returns elements with css class c1
+        //change color
+        items2[0].style.color = 'white';
+    </script>
+</body>
+
+</html>

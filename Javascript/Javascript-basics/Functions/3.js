@@ -6,6 +6,11 @@ let students = [
   { Id: 232, Name: "Jaya", Age: 11 },
   { Id: 889, Name: "Binu", Age: 12 },
 ];
+function AddStudent(student)
+{
+  students.push(student);
+  return students;
+}
 //retrun object from the function
 function GetStudentById(id) {
   for (let ob of students) {
@@ -29,5 +34,9 @@ function GetStudents() {
   return students;
 }
 for (let ob of GetStudents()) {
+  console.log(`ID:${ob.Id} Name:${ob.Name} Age:${ob.Age}`);
+}
+let list=AddStudent( { Id: 443, Name: "Hari", Age: 12 })
+for (let ob of list) {
   console.log(`ID:${ob.Id} Name:${ob.Name} Age:${ob.Age}`);
 }
