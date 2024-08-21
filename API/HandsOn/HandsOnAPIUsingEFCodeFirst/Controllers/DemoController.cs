@@ -9,7 +9,6 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
     [ApiController]
     public class DemoController : ControllerBase
     {
-<<<<<<< HEAD
         private readonly IProductAsyncRepository _productAsyncRepository;
 
         public DemoController(IProductAsyncRepository productAsyncRepository)
@@ -46,8 +45,7 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
             return Ok(); // Empty Response
         }
 
-
-=======
+/*
         private readonly IProuctAsyncRepository repository;
 
         public DemoController(IProuctAsyncRepository repository)
@@ -81,7 +79,6 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
         {
             await repository.DeleteById(id);
             return Ok();
-        }
->>>>>>> fa3f6e3f04414bedcc588644259a845364845a32
+        }*/
     }
 }

@@ -5,9 +5,9 @@ namespace HandsOnAPIUsingEFCodeFirst.Repositories
 {
     public class ProuctAsyncRepository : IProuctAsyncRepository
     {
-        private readonly ECommContext _context;
+        private readonly EComContext _context;
 
-        public ProuctAsyncRepository(ECommContext context)
+        public ProuctAsyncRepository(EComContext context)
         {
             _context = context;
         }
