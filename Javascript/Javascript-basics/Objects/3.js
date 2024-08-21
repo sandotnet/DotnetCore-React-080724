@@ -4,7 +4,7 @@ console.log(title[4]);
 console.log("Count: " + title.length);
 console.log(title.toUpperCase());
 console.log(title.toLowerCase());
-console.log(title.indexOf("J"));
+console.log(title.indexOf("o"));
 console.log(title.indexOf("W"));
 console.log(title.lastIndexOf("W"));
 console.log(title.replace("Javascript", "C#"));

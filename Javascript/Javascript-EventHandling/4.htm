@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f() {
+            document.images[0].src = 'photo1.jfif';
+        }
+        function f1() {
+            document.images['img1'].src = 'img1.jpg';
+            document.images['img1'].width = "400";
+        }
+    </script>
+</head>
+
+<body>
+    <img src="img1.jpg" width="300" height="300" onmouseover="f()" onmouseout="f1()" id="img1">
+</body>
+
+</html>

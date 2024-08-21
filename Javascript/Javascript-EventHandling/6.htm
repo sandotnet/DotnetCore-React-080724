@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const setImg = () => {
+            let flag = Math.ceil(Math.random() * 3)
+
+            switch (flag) {
+                case 1:
+                    document.images[0].src = 'B.jpg'
+                    break;
+                case 2:
+                    document.images[0].src = 'A.jpg'
+                    break;
+                case 3:
+                    document.images[0].src = 'C.jpg'
+                    break;
+            }
+        }
+        setInterval(setImg, 1000); 
+    </script>
+</head>
+
+<body>
+    <img src="A.jpg" width="300" height="300" alt="">
+</body>
+
+</html>
