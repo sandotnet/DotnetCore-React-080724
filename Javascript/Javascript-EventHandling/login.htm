@@ -18,12 +18,13 @@
                 event.preventDefault();
             }
         }
+
     </script>
 </head>
 
 <body>
     <form action="http://www.google.co.in" onsubmit="Validate()">
-        <table>
+        <table id="table1">
             <tr>
                 <td>Enter Username</td>
                 <td><input type="text" id='txtUname'></td>
@@ -44,6 +45,9 @@
             </tr>
         </table>
     </form>
+    <script>
+        alert(document.getElementById('table1').innerHTML)
+    </script>
 </body>
 
 </html>
