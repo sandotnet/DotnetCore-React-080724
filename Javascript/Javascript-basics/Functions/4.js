@@ -19,3 +19,7 @@ fn(
     return "Hi";
   }
 );
+fn(
+  () => "Hi",
+  () => "Hello"
+);

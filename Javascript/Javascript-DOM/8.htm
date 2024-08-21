@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //handler
+        const f1 = () => {
+            // alert("Hei guys Good Moring!!");
+            let ob = document.getElementById('p1');
+            ob.style.color = 'maroon';
+            ob.innerText = 'Javascript DOM is easy to learn!!';
+        }
+        //f1();
+    </script>
+</head>
+
+<body>
+    <p id="p1" style="color: red;">I am Para.</p>
+    <input type="button" value="ClickMe" onclick="f1()" />
+    <script>
+        //here obj is a object of paragraph
+        let obj = document.getElementById('p1')
+        obj.style.color = 'green';
+        obj.innerText = 'Welcome Users!!!'
+    </script>
+</body>
+
+</html>
