@@ -1,0 +1,2 @@
+1.Create a Book Component with props like Id,Name,Price,Author and display the book details.
+2.Create a Shop Component and show the multiple book details by rendering the Book components multiple times.
