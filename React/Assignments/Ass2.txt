@@ -1,0 +1,6 @@
+1.Create a Books Component
+2.defind Arrat of books in the Books component and each book consisit of
+  Id,Name,Price,Author,Year,Lang
+ 3. Map the Book details in a table format with in the same component
+ 4. use Bootstrap
+  
