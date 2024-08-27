@@ -86,7 +86,7 @@ const Demo12 = () => {
           </tr>
         </table>
         <hr />
-        <table border={1}>
+        <table border={1} className="table table-bordered">
           <thead>
             <tr>
               <td>Id</td>
