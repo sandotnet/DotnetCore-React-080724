@@ -3,7 +3,7 @@ const MyForm = () => {
   let [uname, setName] = useState("");
   const submitForm = (e) => {
     alert("Hello " + uname);
-    e.preventDefault(); //prevents form submission to the server
+    // e.preventDefault(); //prevents form submission to the server
   };
   return (
     <div className="container">
