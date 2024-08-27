@@ -93,7 +93,7 @@ const Demo12 = () => {
               <td>Name</td>
               <td>Price</td>
               <td>Stock</td>
-            </tr>
+            </tr>       
           </thead>
           <tbody>
             {items.map((i) => (

@@ -23,6 +23,15 @@ namespace HandsOnAPIUsingEFCodeFirst
             builder.Services.AddTransient<IUserRepository, UserRepository>();
             builder.Services.AddTransient<IProuctAsyncRepository, ProuctAsyncRepository>();
             builder.Services.AddControllers();
+            //configure the cors
+            builder.Services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options =>
+       options.AllowAnyOrigin() //allow any client server
+                .AllowAnyMethod() //allow any http method like(get,post,put,delete)
+                .AllowAnyHeader() //allow any header like accept,authorize etc
+                );
+            });
             //Configure JWT to valie token data
             #region TokenValidationCode
             builder.Services.AddAuthentication(options =>
@@ -73,7 +82,7 @@ namespace HandsOnAPIUsingEFCodeFirst
             new string[] {}
         }
     });
-            }); 
+            });
             #endregion
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -88,7 +97,8 @@ namespace HandsOnAPIUsingEFCodeFirst
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            //add cors to middleware
+            app.UseCors("AllowOrigin");
             app.UseAuthentication();
             app.UseAuthorization();
 
