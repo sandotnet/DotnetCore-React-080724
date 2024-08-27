@@ -34,10 +34,11 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
         public IActionResult Get([FromRoute]int id) //Get a Product By Id
         {
             var product=_productRepository.GetProduct(id);
-            if (product != null)
-                return StatusCode(200, product);
-            else
-                return StatusCode(404, "Invalid Id");
+            return Ok(product);
+            //if (product != null)
+            //    return StatusCode(200, product);
+            //else
+            //    return StatusCode(404, "Invalid Id");
         }
         //Post Endpoint
         [HttpPost, Route("AddProduct")]
