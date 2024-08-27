@@ -23,6 +23,7 @@ namespace HandsOnAPIUsingEFCodeFirst
             builder.Services.AddTransient<IUserRepository, UserRepository>();
             builder.Services.AddTransient<IProuctAsyncRepository, ProuctAsyncRepository>();
             builder.Services.AddControllers();
+<<<<<<< Updated upstream
             //configure the cors
             builder.Services.AddCors(c =>
             {
@@ -31,6 +32,12 @@ namespace HandsOnAPIUsingEFCodeFirst
                 .AllowAnyMethod() //allow any http method like(get,post,put,delete)
                 .AllowAnyHeader() //allow any header like accept,authorize etc
                 );
+=======
+            //CONFIGURE THE CORS 
+            builder.Services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+>>>>>>> Stashed changes
             });
             //Configure JWT to valie token data
             #region TokenValidationCode
@@ -97,8 +104,14 @@ namespace HandsOnAPIUsingEFCodeFirst
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+<<<<<<< Updated upstream
             //add cors to middleware
             app.UseCors("AllowOrigin");
+=======
+
+            app.UseCors("AllowOrigin");
+
+>>>>>>> Stashed changes
             app.UseAuthentication();
             app.UseAuthorization();
 
