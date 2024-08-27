@@ -7,12 +7,13 @@ const UpdateProduct = () => {
     stock: 0,
     price: 0,
   });
-  useEffect(() => {
-    axios.get("http://localhost:5005/api/Product/GetProduct/5").then((res) => {
-      console.log(res);
-      SetProduct(res.data);
-    });
-  }, []);
+  const [err, setError] = useState("");
+  //   useEffect(() => {
+  //     axios.get("http://localhost:5005/api/Product/GetProduct/5").then((res) => {
+  //       console.log(res);
+  //       SetProduct(res.data);
+  //     });
+  //   }, []);
   const save = () => {
     console.log(product);
     axios
@@ -27,6 +28,20 @@ const UpdateProduct = () => {
       .delete("http://localhost:5005/api/Product/DeleteProduct?id=3")
       .then((res) => {})
       .catch((err) => console.log(err));
+  };
+  const search = (e) => {
+    let productId = product.productId;
+    console.log(productId);
+    axios
+      .get("http://localhost:5005/api/Product/GetProduct/" + productId)
+      .then((res) => {
+        console.log(res);
+        if (res.statusText !== "No Content") SetProduct(res.data);
+        else {
+          setError("Invalid Id");
+        }
+      });
+    e.preventDefault();
   };
   return (
     <div className="container">
@@ -44,7 +59,6 @@ const UpdateProduct = () => {
                     productId: e.target.value,
                   }))
                 }
-                readOnly
               />
             </td>
           </tr>
@@ -97,6 +111,12 @@ const UpdateProduct = () => {
             <td colSpan={2}>
               <button type="submit">Edit</button>
               <button onClick={remove}>Delete</button>
+              <button onClick={search}>Search</button>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={2}>
+              <span>{err}</span>
             </td>
           </tr>
         </table>

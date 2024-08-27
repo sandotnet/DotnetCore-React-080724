@@ -7,9 +7,9 @@ import UpdateProduct from "./UpdateProduct";
 function App() {
   return (
     <div className="App">
-      <GetProducts />
+      {/* <GetProducts /> */}
       {/* <AddProduct /> */}
-      {/* <UpdateProduct /> */}
+      <UpdateProduct />
     </div>
   );
 }
