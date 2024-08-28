@@ -41,7 +41,7 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
         public IActionResult ValidUser(Login login)
         {
             {
-                AuthReponse authReponse = null;
+                AuthReponse authReponse = new AuthReponse();
                 var user = _userRepository.ValidUser(login.Email,login.Password);
                 if (user != null)
                 {
