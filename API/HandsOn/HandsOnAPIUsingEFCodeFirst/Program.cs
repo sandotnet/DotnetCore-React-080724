@@ -1,4 +1,3 @@
-
 using HandsOnAPIUsingEFCodeFirst.Entities;
 using HandsOnAPIUsingEFCodeFirst.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -15,52 +14,46 @@ namespace HandsOnAPIUsingEFCodeFirst
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddDbContext<EComContext>(); //Register ECommContext class to DIC
+            builder.Services.AddDbContext<EComContext>(); // Register EComContext class to DIC
             builder.Services.AddTransient<IProductRepository, ProductRepository>();
             builder.Services.AddTransient<IProductAsyncRepository, ProductAsyncRepository>();
-
             builder.Services.AddTransient<IOrderRepository, OrderRepository>();
             builder.Services.AddTransient<IUserRepository, UserRepository>();
-            builder.Services.AddTransient<IProuctAsyncRepository, ProuctAsyncRepository>();
             builder.Services.AddControllers();
-<<<<<<< Updated upstream
-            //configure the cors
+
+            // Configure CORS
             builder.Services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options =>
-       options.AllowAnyOrigin() //allow any client server
-                .AllowAnyMethod() //allow any http method like(get,post,put,delete)
-                .AllowAnyHeader() //allow any header like accept,authorize etc
+                    options.AllowAnyOrigin()    // allow any client server
+                           .AllowAnyMethod()    // allow any HTTP method (GET, POST, PUT, DELETE)
+                           .AllowAnyHeader()    // allow any header (e.g., Accept, Authorization)
                 );
-=======
-            //CONFIGURE THE CORS 
-            builder.Services.AddCors(c =>
-            {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
->>>>>>> Stashed changes
             });
-            //Configure JWT to valie token data
+
+            // Configure JWT to validate token data
             #region TokenValidationCode
             builder.Services.AddAuthentication(options =>
-               {
-                   options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                   options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                   options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-               }).AddJwtBearer(o =>
-               {
-                   o.TokenValidationParameters = new TokenValidationParameters
-                   {
-                       ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                       ValidAudience = builder.Configuration["Jwt:Audience"],
-                       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
-                       ValidateIssuer = true,
-                       ValidateAudience = true,
-                       ValidateLifetime = false,
-                       ValidateIssuerSigningKey = true
-                   };
-               });
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(o =>
+            {
+                o.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = false,
+                    ValidateIssuerSigningKey = true
+                };
+            });
             #endregion
-            //Configure Swagger UI to validate token
+
+            // Configure Swagger UI to validate token
             #region Swagger UI for Validate Token
             builder.Services.AddSwaggerGen(c =>
             {
@@ -79,16 +72,16 @@ namespace HandsOnAPIUsingEFCodeFirst
                     Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
                 });
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement {
-        {
-            new OpenApiSecurityScheme {
-                Reference = new OpenApiReference {
-                    Type = ReferenceType.SecurityScheme,
-                        Id = "Bearer"
-                }
-            },
-            new string[] {}
-        }
-    });
+                    {
+                        new OpenApiSecurityScheme {
+                            Reference = new OpenApiReference {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] { }
+                    }
+                });
             });
             #endregion
 
@@ -104,17 +97,12 @@ namespace HandsOnAPIUsingEFCodeFirst
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-<<<<<<< Updated upstream
-            //add cors to middleware
-            app.UseCors("AllowOrigin");
-=======
 
+            // Add CORS to middleware
             app.UseCors("AllowOrigin");
 
->>>>>>> Stashed changes
             app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.MapControllers();
 
