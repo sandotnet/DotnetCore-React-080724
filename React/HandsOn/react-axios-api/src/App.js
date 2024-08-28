@@ -5,6 +5,8 @@ import AddProduct from "./AddProduct";
 import UpdateProduct from "./UpdateProduct";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./login";
+import AdminDashboard from "./admin-dashboard";
+import UserDashboard from "./user-dashboard";
 function App() {
   return (
     <div className="App">
@@ -14,6 +16,9 @@ function App() {
           <Route path="add" element={<AddProduct />} />
           <Route path="update" element={<UpdateProduct />} />
           <Route path="login" element={<Login />} />
+          <Route path="getall" element={<GetProducts />} />
+          <Route path="admin-dashboard" element={<AdminDashboard />} />
+          <Route path="user-dashboard" element={<UserDashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

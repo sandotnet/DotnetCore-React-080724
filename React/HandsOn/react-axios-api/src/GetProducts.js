@@ -4,7 +4,11 @@ const GetProducts = () => {
   const [items, GetItems] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5005/api/Product/GetProducts")
+      .get("http://localhost:5005/api/Product/GetProducts", {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      })
       .then((response) => {
         console.log(response.data);
         GetItems(response.data); //adding response data to items
