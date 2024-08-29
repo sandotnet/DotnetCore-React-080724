@@ -11,9 +11,9 @@ function App() {
     // <Context.Provider value={value}>
     //   <MyComponent />
     // </Context.Provider>
-    // <Application />
+    <Application />
     // <Component1 />
-    <Demo5 />
+    // <Demo5 />
   );
 }
 
