@@ -17,7 +17,7 @@ namespace XUnitTest
             Calculate obj = new Calculate();
             int expected = 3;
             //Act
-            int actual = obj.Add(1, 2);
+            int actual = obj.Add(1, 4);
             
             //Assessrt
             Assert.Equal(expected, actual);
@@ -28,7 +28,7 @@ namespace XUnitTest
         {
             Calculate obj = new Calculate();
             int actual = obj.Div(10,2);
-            Assert.Equal(5,actual);
+            Assert.Equal(12,actual);
             
         }
         [Fact]
@@ -40,6 +40,15 @@ namespace XUnitTest
             Assert.NotNull(list);
             Assert.Equal(5, list.Count);
            
+        }
+        [Fact]
+        public void TestSquare()
+        {
+            //Arrange
+            double expected = 81;
+            //Act
+            double actual = Maths.Square(9);
+            Assert.Equal(expected, actual);
         }
     }
 }
