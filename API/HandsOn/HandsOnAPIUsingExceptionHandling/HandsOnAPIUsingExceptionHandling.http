@@ -1,0 +1,6 @@
+@HandsOnAPIUsingExceptionHandling_HostAddress = http://localhost:5262
+
+GET {{HandsOnAPIUsingExceptionHandling_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
