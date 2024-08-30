@@ -18,6 +18,7 @@ namespace ProductAPITest.Xunit
         {
             List<Products> list = repo.GetProducts();
             Assert.NotNull(list);
+            Assert.NotEqual(0, list.Count);
         }
         [Fact]
         public void TestGetProduct()
