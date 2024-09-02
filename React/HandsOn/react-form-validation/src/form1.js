@@ -16,6 +16,7 @@ function Form1() {
     setIsSubmit(true);
     if (Object.keys(formErrors).length === 0) {
       alert("Form Sumbitted");
+      console.log(formValues);
     }
   };
   const validate = (values) => {
@@ -32,12 +33,12 @@ function Form1() {
     } else if (!regex.test(values.email)) {
       errors.email = "This is not a valid email format!";
     }
-
+    console.log(values.password);
     if (!values.password) {
       errors.password = "Password is required!";
-    } else if (values.password < 4) {
+    } else if (values.password.length < 4) {
       errors.password = "Password must be more than 4 characters";
-    } else if (values.password > 16) {
+    } else if (values.password.length > 16) {
       errors.password = "Password cannot be more than 16 characters";
     }
     return errors;

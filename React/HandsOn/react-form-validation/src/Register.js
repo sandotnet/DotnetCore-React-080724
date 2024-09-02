@@ -5,14 +5,14 @@ import * as Yup from "yup";
 const validationSchema = Yup.object({
   name: Yup.string()
     .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Username is required"),
+    .max(20, "Too Long!")
+    .required("name is required"),
   email: Yup.string()
-    .required("Email is required")
-    .email("Invalid Email Address"),
-  mobile: Yup.number()
-    .required("Mobile is required")
-    .matches("[6-9][0-9]{9}", "Invalid Mobile no"),
+    .email("Invalid Email Address")
+    .required("Email is required"),
+  mobile: Yup.string()
+    .matches("[6-9][0-9]{9}", "Invalid Mobile no")
+    .required("Mobile is required"),
   username: Yup.string().required("Username is required"),
   password: Yup.string()
     .required("Password is required")
