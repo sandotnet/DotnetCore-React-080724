@@ -1,0 +1,52 @@
+{
+	"Routes": [
+		{
+			"DownstreamPathTemplate": "/api/Product/{pattern}",
+			"DownstreamScheme": "http",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5153
+				}
+			],
+			"UpstreamPathTemplate": "/ecomm/Product/{pattern}",
+			"UpstreamHttpMethod": [ "GET", "DELETE", "POST", "PUT" ]
+		},
+		{
+			"DownstreamPathTemplate": "/api/Authenticate/{pattern}",
+			"DownstreamScheme": "http",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5259
+				}
+			],
+			"UpstreamPathTemplate": "/ecomm/Auth/{pattern}",
+			"UpstreamHttpMethod": [ "GET", "DELETE", "POST", "PUT" ]
+		},
+		{
+			"DownstreamPathTemplate": "/api/Order/{pattern}",
+			"DownstreamScheme": "http",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5228
+				}
+			],
+			"UpstreamPathTemplate": "/ecomm/Order/{pattern}",
+			"UpstreamHttpMethod": [ "GET", "DELETE", "POST", "PUT" ]
+		},
+		{
+			"DownstreamPathTemplate": "/api/Cart/{pattern}",
+			"DownstreamScheme": "http",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5159
+				}
+			],
+			"UpstreamPathTemplate": "/ecomm/Cart/{pattern}",
+			"UpstreamHttpMethod": [ "GET", "DELETE", "POST", "PUT" ]
+		}
+	]
+}

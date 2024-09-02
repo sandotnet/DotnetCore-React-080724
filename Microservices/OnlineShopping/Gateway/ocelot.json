@@ -1,0 +1,16 @@
+{
+	"Routes": [
+		{
+			"DownstreamPathTemplate": "/api/Product/{pattern}",
+			"DownstreamScheme": "http",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 5153
+				}
+			],
+			"UpstreamPathTemplate": "/ecomm/Product/{pattern}",
+			"UpstreamHttpMethod": [ "GET", "DELETE","POST","PUT" ]
+		}
+	]
+}
