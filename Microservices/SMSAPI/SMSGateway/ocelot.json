@@ -1,0 +1,54 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/User/{pattern}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5136
+        }
+      ],
+      "UpstreamPathTemplate": "/sms/user/{pattern}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5136
+        }
+      ],
+      "UpstreamPathTemplate": "/sms/user/",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Student/{pattern}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5103
+        }
+      ],
+      "UpstreamPathTemplate": "/sms/student/{pattern}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Staff/{pattern}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5277
+        }
+      ],
+      "UpstreamPathTemplate": "/sms/staff/{pattern}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "Delete" ]
+    }
+
+  ]
+
+}
