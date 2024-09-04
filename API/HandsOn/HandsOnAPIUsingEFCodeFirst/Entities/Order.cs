@@ -10,7 +10,7 @@ namespace HandsOnAPIUsingEFCodeFirst.Entities
         public int ProductId { get; set; } //set as ForeignKey
         [Column(TypeName ="Date")]
         public DateTime OrderDate { get; set; }
-   
+        public int TotalPrice { get; set; }
         public int UserId { get; set; } //set as ForeignKey
         //Navigation Property
         public Product Product { get; set; }

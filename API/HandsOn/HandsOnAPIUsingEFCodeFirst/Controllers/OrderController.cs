@@ -9,7 +9,7 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class OrderController : ControllerBase
     {
         private readonly IOrderRepository orderRepository;
@@ -31,7 +31,9 @@ namespace HandsOnAPIUsingEFCodeFirst.Controllers
             {
                 OrderId = Guid.NewGuid(),
                 ProductId=orderDto.ProductId,
-                UserId=orderDto.UserId
+                UserId=orderDto.UserId,
+                TotalPrice=orderDto.TotalPrice,
+                OrderDate=DateTime.Now
             };
 
             orderRepository.MakeOrder(order);   

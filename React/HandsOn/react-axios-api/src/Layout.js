@@ -1,34 +1,40 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-const UserDashboard = () => {
+
+export default function Layout() {
   return (
     <div>
       <header>
-        <h1>ABC School</h1>
+        <h1>E APP</h1>
       </header>
       <nav>
         <ul>
           <li>
-            <Link to="search">Search</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="view-cart">ViewCart</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/login">LogOut</Link>
+            <Link to="/products">products</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </nav>
       <main>
         <Outlet />
+        {/* Outlet is like a placeholder and all requested routes are render to Outlet element  */}
       </main>
       <footer>
         <h2>
           All Rights Reserver@<a href="#">AbcShool</a> 2024-25
         </h2>
       </footer>
-      {/* Outlet is like a placeholder and all requested routes are render to Outlet element  */}
     </div>
   );
-};
-export default UserDashboard;
+}

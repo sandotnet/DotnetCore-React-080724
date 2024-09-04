@@ -36,3 +36,68 @@
     transform: rotate(360deg);
   }
 }
+ul li
+{
+  display: inline;
+  padding: 20px;
+}
+
+header,
+nav,
+main,
+footer {
+    border: 1px solid;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    height: 100px;
+    background-color: blue;
+}
+
+header h1 {
+    color: white;
+    padding-left: 30px;
+}
+
+nav {
+    height: 40px;
+    background-color: cadetblue
+}
+
+nav ul li {
+    display: inline;
+
+}
+
+nav ul li a {
+    padding-left: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    height: 400px;
+    background-color: white;
+    background-repeat: no-repeat;
+  
+}
+main h1
+{
+    padding: 20px;
+}
+
+footer {
+    height: 50px;
+    background-color: orangered;
+
+
+}
+
+footer h2 {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 15px;
+}
