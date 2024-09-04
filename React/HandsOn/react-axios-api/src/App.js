@@ -11,6 +11,7 @@ import Register from "./register";
 import Layout from "./Layout";
 import Search from "./search";
 import ViewCart from "./viewcart";
+import Transaction from "./transaction";
 function App() {
   return (
     <div className="App">
@@ -31,6 +32,7 @@ function App() {
           <Route path="user-dashboard" element={<UserDashboard />}>
             <Route path="search" element={<Search />} />
             <Route path="view-cart" element={<ViewCart />} />
+            <Route path="tran" element={<Transaction />} />
           </Route>
         </Routes>
       </BrowserRouter>
