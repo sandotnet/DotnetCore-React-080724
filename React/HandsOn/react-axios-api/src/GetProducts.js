@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { RoleContext } from "./MyContexts";
 const GetProducts = () => {
   const [items, GetItems] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     axios
       .get("http://localhost:5005/api/Product/GetProducts", {
@@ -22,6 +25,11 @@ const GetProducts = () => {
       .then((res) => {})
       .catch((err) => console.log(err));
   };
+  const Update = (productId) => {
+    sessionStorage.setItem("Pid", productId);
+    navigate("/admin-dashboard/update");
+  };
+
   return (
     <div className="container">
       <form>
@@ -43,6 +51,7 @@ const GetProducts = () => {
                 <td>{i.stock}</td>
                 <td>
                   <button onClick={() => Remove(i.productId)}>Delete</button>
+                  <button onClick={() => Update(i.productId)}>Update</button>
                 </td>
               </tr>
             ))}

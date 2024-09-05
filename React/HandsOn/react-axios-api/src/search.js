@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Item from "./item";
 const Search = () => {
   const [items, GetItems] = useState([]);
   useEffect(() => {
@@ -17,6 +18,7 @@ const Search = () => {
   }, []);
   const addToCart = (pId) => {
     console.log(sessionStorage.getItem("userId"));
+
     // e.preventDefault();
     let cart = {
       cartId: "0",
@@ -36,6 +38,7 @@ const Search = () => {
       <table className="table table-bordered table-hover">
         <thead className="table-primary">
           <tr>
+            <td>Pic</td>
             <td>Id</td>
             <td>Name</td>
             <td>Price</td>
@@ -44,17 +47,13 @@ const Search = () => {
         </thead>
         <tbody>
           {items.map((i) => (
-            <tr>
-              <td>{i.productId}</td>
-              <td>{i.name}</td>
-              <td>{i.price}</td>
-              <td>{i.stock}</td>
-              <td>
-                <button onClick={() => addToCart(i.productId)}>
-                  Add To Cart
-                </button>
-              </td>
-            </tr>
+            <Item
+              productId={i.productId}
+              price={i.price}
+              name={i.name}
+              stock={i.stock}
+              handler={() => addToCart(i.productId)}
+            ></Item>
           ))}
         </tbody>
       </table>

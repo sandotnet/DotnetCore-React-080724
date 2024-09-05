@@ -8,12 +8,15 @@ const UpdateProduct = () => {
     price: 0,
   });
   const [err, setError] = useState("");
-  //   useEffect(() => {
-  //     axios.get("http://localhost:5005/api/Product/GetProduct/5").then((res) => {
-  //       console.log(res);
-  //       SetProduct(res.data);
-  //     });
-  //   }, []);
+  let pId = sessionStorage.getItem("Pid");
+  useEffect(() => {
+    axios
+      .get("http://localhost:5005/api/Product/GetProduct/" + pId)
+      .then((res) => {
+        console.log(res);
+        SetProduct(res.data);
+      });
+  }, []);
   const save = () => {
     console.log(product);
     axios
@@ -29,20 +32,7 @@ const UpdateProduct = () => {
       .then((res) => {})
       .catch((err) => console.log(err));
   };
-  const search = (e) => {
-    let productId = product.productId;
-    console.log(productId);
-    axios
-      .get("http://localhost:5005/api/Product/GetProduct/" + productId)
-      .then((res) => {
-        console.log(res);
-        if (res.statusText !== "No Content") SetProduct(res.data);
-        else {
-          setError("Invalid Id");
-        }
-      });
-    e.preventDefault();
-  };
+  
   return (
     <div className="container">
       <form onSubmit={save}>
@@ -110,8 +100,6 @@ const UpdateProduct = () => {
           <tr>
             <td colSpan={2}>
               <button type="submit">Edit</button>
-              <button onClick={remove}>Delete</button>
-              <button onClick={search}>Search</button>
             </td>
           </tr>
           <tr>

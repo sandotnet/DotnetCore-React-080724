@@ -4,7 +4,7 @@ const UserDashboard = () => {
   return (
     <div>
       <header>
-        <h1>ABC School</h1>
+        <h1>E App</h1>
       </header>
       <nav>
         <ul>

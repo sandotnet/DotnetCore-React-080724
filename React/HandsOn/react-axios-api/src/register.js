@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { RoleContext } from "./MyContexts";
 const Register = () => {
+  let role = useContext(RoleContext);
   const [user, SetUser] = useState({
     userId: 0,
     name: "",
     email: "",
     password: "",
-    role: "User",
+    role: role,
   });
   const navigate = useNavigate();
   const registerHandler = () => {

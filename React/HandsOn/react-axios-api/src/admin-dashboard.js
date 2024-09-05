@@ -9,7 +9,7 @@ const AdminDashboard = () => {
   return (
     <div>
       <header>
-        <h1>ABC School</h1>
+        <h1>E App</h1>
         <h4 style={{ float: "right", padding: "10px" }}>Welcome {uname}</h4>
       </header>
       <nav>
