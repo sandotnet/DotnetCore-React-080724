@@ -1,0 +1,385 @@
+{
+  "jeans": [
+    {
+      "id": "1",
+      "brand": "Levi's",
+      "name": "501 Original Fit Jeans",
+      "price": 59.99,
+      "color": "Blue",
+      "size": "32x32",
+      "image": "https://images.unsplash.com/photo-1598036601838-b48877803f4f?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8amVhbiUyMHBhbnRzfGVufDB8fDB8fHww",
+      "description": "Classic straight-leg jeans from Levi's.",
+      "quantity": 10,
+      "category": "Men's",
+      "rating": 4.3
+    },
+    {
+      "id": "3",
+      "brand": "Lee prudhvi",
+      "name": "Regular Fit Straight Leg Jean",
+      "price": 34.99,
+      "color": "Black",
+      "size": "36x34",
+      "image": "https://images.unsplash.com/photo-1624378440847-4a64ee1a889d?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGplYW4lMjBwYW50c3xlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Classic straight-leg jeans from Lee.",
+      "quantity": 8,
+      "category": "Men's",
+      "rating": 4.1,
+      "formData": {
+        "id": "3",
+        "brand": "pruduvi",
+        "name": "Regular Fit Straight Leg Jean",
+        "price": 34.99,
+        "color": "Black",
+        "size": "36x34",
+        "image": "https://images.unsplash.com/photo-1624378440847-4a64ee1a889d?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGplYW4lMjBwYW50c3xlbnwwfHwwfHx8MA%3D%3D",
+        "description": "Classic straight-leg jeans from Lee.",
+        "quantity": 8,
+        "category": "Men's",
+        "rating": 4.1
+      }
+    },
+    {
+      "id": "6",
+      "brand": "H&M",
+      "name": "Slim Fit Jeans",
+      "price": 39.99,
+      "color": "Gray",
+      "size": "30x32",
+      "image": "https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8amVhbnN8ZW58MHx8MHx8fDA%3D",
+      "description": "Modern slim-fit jeans for everyday wear.",
+      "quantity": 18,
+      "category": "Men's",
+      "rating": 3.8
+    },
+    {
+      "id": "7",
+      "brand": "American Eagle",
+      "name": "Skinny Stretch Jeans",
+      "price": 54.99,
+      "color": "Black",
+      "size": "29x32",
+      "image": "https://media.istockphoto.com/id/1196532691/photo/full-length-of-handsome-young-man-wearing-a-green-t-shirt-and-black-jeans-walking-on-a-road.jpg?s=612x612&w=0&k=20&c=6exG6s2FhE5ZFiP_WZFGBwuqFvVBwnGKN0tqUPBzm70=",
+      "description": "Super stretchy skinny jeans for a sleek look.",
+      "quantity": 10,
+      "category": "Women's",
+      "rating": 4.2
+    },
+    {
+      "id": "8",
+      "brand": "Guess",
+      "name": "Low-Rise Bootcut Jeans",
+      "price": 79.99,
+      "color": "Dark Wash",
+      "size": "27x32",
+      "image": "https://media.istockphoto.com/id/1404095908/photo/handsome-businessman-walking-on-the-street-talking-via-mobile-phone-fashionable-style-male.jpg?s=612x612&w=0&k=20&c=AdWUVU3zevci_bV2vBZdJnAtuHy8ya5130kkuba5lGo=",
+      "description": "Low-rise bootcut jeans for a trendy style.",
+      "quantity": 14,
+      "category": "Women's",
+      "rating": 4.7
+    },
+    {
+      "id": "9",
+      "brand": "Abercrombie & Fitch",
+      "name": "Athletic Slim Jeans",
+      "price": 64.99,
+      "color": "Medium Wash",
+      "size": "31x32",
+      "image": "https://media.istockphoto.com/id/467533204/photo/mans-legs.jpg?s=612x612&w=0&k=20&c=VDp989Q_xNjpWcPh25MmL_o0QXGq1XDfLnrrCP5Qjm8=",
+      "description": "Athletic fit jeans with a slim leg opening.",
+      "quantity": 20,
+      "category": "Men's",
+      "rating": 4.5
+    },
+    {
+      "id": "10",
+      "brand": "Express",
+      "name": "High-Waisted Skinny Jeans",
+      "price": 69.99,
+      "color": "White",
+      "size": "25x30",
+      "image": "https://media.istockphoto.com/id/174927877/photo/jeans-on-hanger.jpg?s=612x612&w=0&k=20&c=PUvHHbrAsgnIYAaM96rp8GhCZQSoUUlBx7z2PUdTqSA=",
+      "description": "High-waisted skinny jeans for a modern look.",
+      "quantity": 16,
+      "category": "Women's",
+      "rating": "5"
+    },
+    {
+      "id": "11",
+      "brand": "Diesel",
+      "name": "Slim Tapered Jeans",
+      "price": 89.99,
+      "color": "Dark Gray",
+      "size": "33x32",
+      "image": "https://media.istockphoto.com/id/172470983/photo/full-length-casual-happy-indian-boy-child-isolated-on-white.jpg?s=612x612&w=0&k=20&c=k5NnBs2tijWKdWusKkix9jJOCoN_aFiWo9_xvjNfry8=",
+      "description": "Slim tapered jeans with a modern look.",
+      "quantity": 10,
+      "category": "Men's",
+      "rating": 4.3
+    },
+    {
+      "id": "12",
+      "brand": "Ralph Lauren",
+      "name": "Classic Straight Jeans",
+      "price": 79.99,
+      "color": "Light Wash",
+      "size": "32x34",
+      "image": "https://media.istockphoto.com/id/1157938216/photo/full-body-length-size-photo-of-crazy-humorous-handsome-carefree-careless-dreamy-optimistic.jpg?s=612x612&w=0&k=20&c=AO6PP5nZIX7DK7vtiTJEAxgDGvvxqwfZK2gmI0Fn_3E=",
+      "description": "Classic straight jeans for timeless style.",
+      "quantity": 15,
+      "category": "Men's",
+      "rating": 4
+    },
+    {
+      "id": "13",
+      "brand": "Tommy Hilfiger",
+      "name": "Skinny Stretch Jeans",
+      "price": 59.99,
+      "color": "Dark Rinse",
+      "size": "30x30",
+      "image": "https://media.istockphoto.com/id/533067052/photo/man-in-jeans-with-empty-pocket.jpg?s=612x612&w=0&k=20&c=7j84BwoWFUIYqHfHj3eIXU1D8sQbn-rwD0d1ULSNqXc=",
+      "description": "Stretchy skinny jeans for a comfortable fit.",
+      "quantity": 8,
+      "category": "Men's",
+      "rating": 4.2
+    },
+    {
+      "id": "14",
+      "brand": "Forever 21",
+      "name": "High-Rise Flare Jeans",
+      "price": 39.99,
+      "color": "Medium Blue",
+      "size": "28x32",
+      "image": "https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8amVhbnN8ZW58MHx8MHx8fDA%3D",
+      "description": "High-rise flare jeans for a retro-inspired look.",
+      "quantity": 20,
+      "category": "Women's",
+      "rating": 3.8
+    },
+    {
+      "id": "15",
+      "brand": "Zara",
+      "name": "Boyfriend Jeans",
+      "price": 49.99,
+      "color": "Light Wash",
+      "size": "27x30",
+      "image": "https://media.istockphoto.com/id/527236518/photo/mans-legs.jpg?s=612x612&w=0&k=20&c=lczyG0ZkWelpn_o-I_VpjAMo_sA3WpdWHMlgZjCSE-k=",
+      "description": "Relaxed fit jeans for a casual chic style.",
+      "quantity": 12,
+      "category": "Women's",
+      "rating": 4.1
+    },
+    {
+      "id": "16",
+      "brand": "Gap",
+      "name": "Slim Fit Jeans",
+      "price": 54.99,
+      "color": "Dark Gray",
+      "size": "29x32",
+      "image": "https://media.istockphoto.com/id/1061746720/photo/young-man-business-casual-fashion-in-new-york.jpg?s=612x612&w=0&k=20&c=zvoy_JZXIqRtbUCmdUMeNPMlcgDZyDYqs999JE8j_Eg=",
+      "description": "Modern slim-fit jeans for everyday wear.",
+      "quantity": 18,
+      "category": "Men's",
+      "rating": 4.4
+    },
+    {
+      "id": "17",
+      "brand": "Express",
+      "name": "Super High Waisted Jeans",
+      "price": 79.99,
+      "color": "Black",
+      "size": "25x30",
+      "image": "https://media.istockphoto.com/id/1181447477/photo/portrait-of-young-and-beautiful-woman-with-no-make-up.jpg?s=612x612&w=0&k=20&c=YJKW9NVZts2nMoeZLrEAtQAtDx7Hm5sQiF7Xv8kevEY=",
+      "description": "Super high-waisted jeans for a sleek silhouette.",
+      "quantity": 10,
+      "category": "Women's",
+      "rating": 4.7
+    },
+    {
+      "id": "18",
+      "brand": "Calvin Klein",
+      "name": "Straight Fit Jeans",
+      "price": 64.99,
+      "color": "Dark Wash",
+      "size": "31x32",
+      "image": "https://media.istockphoto.com/id/1148893542/photo/stylish-jeans-clothing-store-stands-showcase-boutique.jpg?s=612x612&w=0&k=20&c=KiK-NXIxE-jRAFmXRnMKbOWb8DBfYss66X4EdW-GNAQ=",
+      "description": "Straight fit jeans for a versatile look.",
+      "quantity": 14,
+      "category": "Men's",
+      "rating": 4.6
+    },
+    {
+      "id": "19",
+      "brand": "Levi's",
+      "name": "High-Rise Skinny Jeans",
+      "price": 69.99,
+      "color": "Medium Blue",
+      "size": "26x30",
+      "image": "https://media.istockphoto.com/id/2050810495/photo/stylish-business-woman.jpg?s=612x612&w=0&k=20&c=zU1ldBqnQZxFtP74uQLEwUFHXJQUzXxOENMLCwuYn98=",
+      "description": "High-rise skinny jeans for a flattering fit.",
+      "quantity": 20,
+      "category": "Women's",
+      "rating": 4.5
+     
+    },
+    {
+      "id": "20",
+      "brand": "Hollister",
+      "name": "Bootcut Jeans",
+      "price": 49.99,
+      "color": "Medium Wash",
+      "size": "27x32",
+      "image": "https://media.istockphoto.com/id/915923400/photo/blue-mens-jeans-denim-pants-on-orange-background-contrast-saturated-color-fashion-clothing.webp?b=1&s=170667a&w=0&k=20&c=mMV-DGwUc6kGms_1xzAPYnVVpz8wmn13LSppllWtUPs=",
+      "description": "Bootcut jeans with a slight flare at the hem.",
+      "quantity": 16,
+      "category": "Women's",
+      "rating": 4.3
+    },
+    {
+      "id": "5f0c",
+      "brand": "wrogn",
+      "name": "Denim Jeans",
+      "price": "230",
+      "color": "black",
+      "size": "23x43",
+      "image": "https://etimg.etb2bimg.com/photo/77086743.cms",
+      "description": "Wrogn join hands with Animal Planet for a new range, Marketing & Advertising News, ET BrandEquity",
+      "quantity": "20",
+      "category": "Men's",
+      "rating": "4.5"
+    },
+    {
+      "id": "d133",
+      "brand": "wrogn",
+      "name": "Denim Jeans",
+      "price": "230",
+      "color": "black",
+      "size": "23x43",
+      "image": "https://etimg.etb2bimg.com/photo/77086743.cms",
+      "description": "Wrogn join hands with Animal Planet for a new range, Marketing & Advertising News, ET BrandEquity",
+      "quantity": "20",
+      "category": "Men's",
+      "rating": "4.5"
+    },
+    {
+      "id": "1a87",
+      "brand": "wrogn",
+      "name": "Denim Jeans",
+      "price": "230",
+      "color": "black",
+      "size": "23x43",
+      "image": "https://etimg.etb2bimg.com/photo/77086743.cms",
+      "description": "Wrogn join hands with Animal Planet for a new range, Marketing & Advertising News, ET BrandEquity",
+      "quantity": "20",
+      "category": "Men's",
+      "rating": "4.5"
+    },
+    {
+      "id": "b56b",
+      "brand": "wrogn",
+      "name": "Denim Jeans",
+      "price": "230",
+      "color": "black",
+      "size": "23x43",
+      "image": "https://etimg.etb2bimg.com/photo/77086743.cms",
+      "description": "Wrogn join hands with Animal Planet for a new range, Marketing & Advertising News, ET BrandEquity",
+      "quantity": "20",
+      "category": "Men's",
+      "rating": "4.5"
+    },
+    {
+      "id": "b0bc",
+      "brand": "wrogn",
+      "name": "Denim Jeans",
+      "price": "230",
+      "color": "black",
+      "size": "23x43",
+      "image": "https://etimg.etb2bimg.com/photo/77086743.cms",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "quantity": "20",
+      "category": "Men's",
+      "rating": "4.5"
+    }
+  ],
+  "users": [
+    {
+      "username": "admin1",
+      "email": "admin1@example.com",
+      "password": "admin123",
+      "type": "admin",
+      "id": "493a"
+    },
+    {
+      "username": "user1",
+      "email": "user1@example.com",
+      "password": "password123",
+      "type": "customer",
+      "id": "2ada"
+    },
+    {
+      "username": "admin2",
+      "email": "admin2@example.com",
+      "password": "admin456",
+      "type": "admin",
+      "id": "acd6"
+    },
+    {
+      "username": "user2",
+      "email": "user2@example.com",
+      "password": "password456",
+      "type": "customer",
+      "id": "8424"
+    },
+    {
+      "username": "admin3",
+      "email": "admin3@example.com",
+      "password": "admin789",
+      "type": "admin",
+      "id": "1a19"
+    },
+    {
+      "id": "c8ae",
+      "user": {
+        "email": "prudhvichinnam101@gmail.com",
+        "password": "prudhvi@123CH",
+        "type": "admin",
+        "username": "prudhvi"
+      }
+    },
+    {
+      "id": "f087",
+      "email": "prudhvichinnam101@gmail.com",
+      "password": "prudhvi@123CH",
+      "type": "admin",
+      "username": "prudhvi"
+    },
+    {
+      "id": "82fc",
+      "email": "krishnachinnam181@gmail.com",
+      "password": "12345678",
+      "type": "customer",
+      "username": "krishna"
+    },
+    {
+      "id": "551e",
+      "email": "sai@gmail.com",
+      "password": "123456",
+      "type": "admin",
+      "username": "sai"
+    },
+    {
+      "id": "bc37",
+      "email": "sandeep@gmail.com",
+      "password": "sandeep@123",
+      "type": "customer",
+      "username": "sandeep"
+    },
+    {
+      "id": "19a4",
+      "email": "don@gmail.com",
+      "password": "123456",
+      "type": "admin",
+      "username": "don"
+    }
+  ]
+}

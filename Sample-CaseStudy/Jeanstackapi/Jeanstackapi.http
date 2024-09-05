@@ -1,0 +1,6 @@
+@Jeanstackapi_HostAddress = http://localhost:5287
+
+GET {{Jeanstackapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

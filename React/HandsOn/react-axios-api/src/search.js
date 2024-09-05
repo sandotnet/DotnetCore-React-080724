@@ -1,10 +1,9 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Item from "./item";
-import Login, { UserContext } from "./login";
 const Search = () => {
   const [items, GetItems] = useState([]);
-  let userId = useContext(UserContext);
+  //let userId = useContext(UserContext);
   useEffect(() => {
     axios
       .get("http://localhost:5005/api/Product/GetProducts", {
@@ -21,6 +20,8 @@ const Search = () => {
   const addToCart = (pId) => {
     console.log(sessionStorage.getItem("userId"));
 
+    let userId = sessionStorage.getItem("userId");
+    console.log(userId);
     // e.preventDefault();
     let cart = {
       cartId: "0",

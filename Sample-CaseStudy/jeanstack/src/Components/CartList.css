@@ -1,0 +1,121 @@
+.cart-list {
+  display: grid;
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2em;
+  gap: 0.5em;
+  scroll-snap-type: y mandatory;
+
+  scroll-behavior: smooth;
+}
+.cart-list::-webkit-scrollbar {
+  width: 1em;
+}
+
+.cart-list::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+}
+
+.cart-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  display: none;
+  /* background-color: darkgrey; */
+  /* outline: 1px solid slategrey; */
+}
+.cart-list .cart-item {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+  gap: 0.8em;
+  padding: 0.5em;
+  scroll-snap-align: start;
+}
+
+.image {
+  width: 100px;
+}
+.cart-item img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.row-1 {
+  border-bottom: 1px solid white;
+}
+.cart-item p {
+  color: white;
+}
+.product-name {
+  font-size: 0.9rem;
+}
+.qty-btns {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+.qty-btns button {
+  background-color: rgb(184, 22, 22);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+  padding: 6px;
+  border-radius: 50%;
+}
+.cart {
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.total {
+  align-self: end;
+  color: rgb(194, 193, 193);
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+.cart-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+  gap: 1em;
+}
+.cart-message p {
+  color: whitesmoke;
+}
+.cart-message a {
+  border: 1px solid white;
+  padding: 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.place-order-button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.place-order-button:hover {
+  background-color: #45a049; /* Darker green */
+}
+
+.place-order-button:active {
+  background-color: #3e8e41; /* Green */
+  transform: translateY(1px);
+}

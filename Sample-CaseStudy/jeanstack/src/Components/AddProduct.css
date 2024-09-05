@@ -1,0 +1,50 @@
+.add-product {
+  padding: 1em;
+}
+.add-product h2 {
+  text-align: center;
+  color: aliceblue;
+  margin-bottom: 0.5em;
+}
+.add-product form {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+}
+.add-product label {
+  color: #222831;
+  font-weight: 500;
+}
+.add-product .form {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
+.add-product form div {
+  display: grid;
+  gap: 0.5em;
+}
+.add-product form input,
+.add-product textarea {
+  padding: 0.3em;
+}
+input:focus {
+  outline: none;
+}
+.add-product-btn {
+  width: 100%;
+  max-width: 370px;
+  padding: 0.5em 0.6em;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1em;
+  align-self: center;
+  border: none;
+  outline: none;
+  background-color: #222831;
+  color: rgb(249, 252, 255);
+}

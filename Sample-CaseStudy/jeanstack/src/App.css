@@ -1,0 +1,88 @@
+.products {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+}
+img {
+  width: 100%;
+  /* height: auto; */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1em;
+  margin-top: 20px;
+}
+.product {
+  /* background-color:#9BB0C1; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.5fr;
+  background-color: white;
+  color: #222831;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 270px;
+  margin: 0 auto;
+}
+.product h3 {
+  font-weight: 400;
+}
+.product h4 {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.product .content {
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+input {
+  outline: none;
+}
+input:focus,
+input:focus-within,
+textarea:focus {
+  outline: none;
+}
+.delete-btn,
+.edit-btn {
+  border: none;
+  padding: 0.5em;
+  text-align: center;
+  border: 1px solid;
+  letter-spacing: 1.5px;
+}
+.delete-btn {
+  background-color: salmon;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.delete-btn:hover {
+  color: salmon;
+  background-color: aliceblue;
+}
+.edit-btn:hover {
+  background-color: #e6ecf5;
+  color: rgb(119, 150, 150);
+  border: 1px solid currentColor;
+}
+.edit-btn {
+  background-color: rgb(119, 150, 150);
+  color: #e6ecf5;
+  font-weight: bold;
+}
+.forgot {
+  color: blue;
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .list {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+}
