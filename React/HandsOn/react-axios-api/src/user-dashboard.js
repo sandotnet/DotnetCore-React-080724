@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const UserDashboard = () => {
+  console.log(sessionStorage.getItem("token"));
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (sessionStorage.getItem("token") === null) {
+      navigate("/login");
+    }
+  }, []);
   return (
     <div>
       <header>
         <h1>E App</h1>
+        <h1>You Logged as: {sessionStorage.getItem("userId")}</h1>
       </header>
       <nav>
         <ul>

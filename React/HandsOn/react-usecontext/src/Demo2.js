@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from "react";
-const userContext = createContext(); //create context object
+const userContext = createContext("Raj"); //create context object
 function Component1() {
   const [user, setUser] = useState("Santhosh");
   return (

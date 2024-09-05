@@ -14,8 +14,8 @@ function App() {
         {/* <Form2 /> */}
         {/* <SimpleForm /> */}
         {/* <FormikForm /> */}
-        {/* <Login /> */}
-        <Register />
+        <Login />
+        {/* <Register /> */}
       </header>
     </div>
   );

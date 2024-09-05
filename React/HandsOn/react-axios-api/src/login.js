@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { createContext } from "react";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pwd, setpwd] = useState("");
@@ -77,3 +78,4 @@ const Login = () => {
   );
 };
 export default Login;
+const UserContext = createContext(sessionStorage.setItem("userId"));
