@@ -12,7 +12,7 @@ const Classroom = () => {
           </tr>
         </thead>
         <tbody className="table-primary">
-          <Student name="Jismon" age="10" std="4" section="A" />
+          <Student name="Jismon" age={10} std="4" section="A" />
           <Student name="Faris" age="10" std="4" section="B" />
           <Student name="Harsha" age="10" std="4" section="A" />
         </tbody>

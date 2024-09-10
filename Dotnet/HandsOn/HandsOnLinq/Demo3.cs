@@ -30,7 +30,7 @@ namespace HandsOnLinq
             var result = from e in employees
                          where e.Designation == "Programmer"
                          select e;
-            result = employees.Where(e => e.Designation == "Programmer");
+            result = employees.Where(e => e.Designation == "Programmer").ToList();
             foreach(var item in result)
                 Console.WriteLine(item);
             //return only Ids of employee with asc

@@ -14,7 +14,7 @@ namespace HandsOnLinq
             int[] n = { 13, 14, 45, 56, 56, 7, 67, 78, 89 };
             var result = from k in n
                          let m = k * k * k
-                         where m > 100 && m < 1000
+                         where m > 100 && m < 10000
                          select m;
             foreach (var i in result)
             {
